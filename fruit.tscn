@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://drlvego0vwc40"]
 
-[node name="Fruit" type="Node2D" unique_id=96072656]
+[ext_resource type="Texture2D" uid="uid://m7oeva0e202n" path="res://Sprites/rogues.png" id="1_t45jj"]
+[ext_resource type="Script" uid="uid://rsiwgxghpq6" path="res://Scripts/movement.cpp" id="2_t45jj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t45jj"]
+radius = 47.853943
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=803967076]
+script = ExtResource("2_t45jj")
+
+[node name="FruitSprite" type="Sprite2D" parent="." unique_id=172782958]
+position = Vector2(603, 429)
+scale = Vector2(9.15625, 9.15625)
+texture = ExtResource("1_t45jj")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+region_filter_clip_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=95206143]
+position = Vector2(606, 464)
+shape = SubResource("CircleShape2D_t45jj")

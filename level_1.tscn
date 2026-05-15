@@ -1,3 +1,54 @@
 [gd_scene format=3 uid="uid://q4wuqjj0t0qk"]
 
+[ext_resource type="Texture2D" uid="uid://dyokmgbww8dfj" path="res://BG/orig_big.png" id="1_hbghi"]
+[ext_resource type="PackedScene" uid="uid://drlvego0vwc40" path="res://fruit.tscn" id="2_hn12h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
+size = Vector2(1315, 111)
+
 [node name="level_1" type="Node2D" unique_id=1187957639]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1180861286]
+position = Vector2(633, 330)
+scale = Vector2(0.5462963, 0.5462963)
+texture = ExtResource("1_hbghi")
+
+[node name="FruitSpawner" type="Node2D" parent="." unique_id=306492895]
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1385530575]
+
+[node name="Fruits" type="Node2D" parent="." unique_id=640847409]
+
+[node name="DangerFruits" type="Node2D" parent="." unique_id=374544171]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1571113477]
+
+[node name="CharacterBody2D" parent="." unique_id=803967076 instance=ExtResource("2_hn12h")]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1255266727]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1328525777]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HpLabel" type="Label" parent="HUD" unique_id=1587131971]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ComboLabel" type="Label" parent="HUD" unique_id=963481864]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AccuracyLabel" type="Label" parent="HUD" unique_id=1098618257]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=525946216]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=157031895]
+position = Vector2(629, 620)
+shape = SubResource("RectangleShape2D_hbghi")

@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://d1et2vkva50ga"]
 
-[node name="Player" type="Node2D" unique_id=1182547332]
+[node name="Player" type="Node2D" unique_id=790743289]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2082143639]
+
+[node name="BodySprite" type="Sprite2D" parent="Player" unique_id=1843573089]
+
+[node name="BluebookSprite" type="Sprite2D" parent="Player" unique_id=1954117375]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=900048138]
+
+[node name="CatcheffectSprite" type="Sprite2D" parent="Player" unique_id=1524574183]

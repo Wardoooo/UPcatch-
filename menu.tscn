@@ -1,3 +1,73 @@
 [gd_scene format=3 uid="uid://bn64p6pai50b0"]
 
+[ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://c6csbtdr205kh" path="res://BG/orig_big1.png" id="1_ouk20"]
+
 [node name="Menu" type="Node2D" unique_id=1216456431]
+position = Vector2(3, -4)
+
+[node name="MainMenu" type="Control" parent="." unique_id=2064265231]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="Sprite2D" parent="MainMenu" unique_id=1982925904]
+position = Vector2(575, 325)
+scale = Vector2(0.5113812, 0.5113812)
+texture = ExtResource("1_ouk20")
+
+[node name="Title" type="Label" parent="MainMenu" unique_id=652585667]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 102.0
+offset_right = 883.0
+offset_bottom = 173.0
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 70
+text = "UPcatch Mania!"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="MainMenu" unique_id=1978421363]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 451.0
+offset_top = 193.0
+offset_right = 730.0
+offset_bottom = 259.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 50
+text = "START"
+
+[node name="Quit" type="Button" parent="MainMenu" unique_id=1936063375]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 495.0
+offset_right = 730.0
+offset_bottom = 561.0
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 51
+text = "QUIT"
+
+[node name="Settings" type="Button" parent="MainMenu" unique_id=1981788910]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 306.0
+offset_right = 730.0
+offset_bottom = 383.14285
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 42
+text = "SETTINGS"
+
+[node name="Leaderboard" type="Button" parent="MainMenu" unique_id=1627592412]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 406.0
+offset_right = 730.0
+offset_bottom = 472.73596
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 30
+text = "LEADERBOARD"

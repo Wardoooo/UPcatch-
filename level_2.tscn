@@ -1,3 +1,37 @@
 [gd_scene format=3 uid="uid://blmpnuvn6lctt"]
 
 [node name="level_2" type="Node2D" unique_id=2005041411]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=2091785156]
+
+[node name="FruitSpawner" type="Node2D" parent="." unique_id=1359094098]
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1745654195]
+
+[node name="Fruits" type="Node2D" parent="." unique_id=1415201597]
+
+[node name="DangerFruits" type="Node2D" parent="." unique_id=1080764196]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1410338373]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1282075098]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=691032293]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HpLabel" type="Label" parent="HUD" unique_id=545760777]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ComboLabel" type="Label" parent="HUD" unique_id=1585429621]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AccuracyLabel" type="Label" parent="HUD" unique_id=731974015]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true

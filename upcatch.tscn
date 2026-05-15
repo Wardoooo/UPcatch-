@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bwxwit0uk4clf"]
+
+[ext_resource type="Texture2D" uid="uid://doi3m44jjb0yt" path="res://Assets/Textures/axel.png" id="1_7rxkc"]
+[ext_resource type="Script" uid="uid://2y7pcy2pmsiu" path="res://axel.gd" id="2_b7wnx"]
+[ext_resource type="AudioStream" uid="uid://5t0hsop47xej" path="res://Songs/albert.mp3" id="3_ifsai"]
+[ext_resource type="Texture2D" uid="uid://dyokmgbww8dfj" path="res://BG/orig_big.png" id="4_ifsai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow4jf"]
+size = Vector2(306, 20)
+
+[node name="upcatch" type="Node2D" unique_id=2130857040]
+
+[node name="Game" type="Node2D" parent="." unique_id=1797316709]
+position = Vector2(534, 306)
+
+[node name="Fruit" type="Sprite2D" parent="Game" unique_id=272000737]
+
+[node name="Axel" type="Sprite2D" parent="Game" unique_id=1844824142]
+position = Vector2(16, -211.00002)
+scale = Vector2(0.07562499, 0.07862501)
+texture = ExtResource("1_7rxkc")
+script = ExtResource("2_b7wnx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Game" unique_id=1060715559]
+stream = ExtResource("3_ifsai")
+volume_db = 12.03
+autoplay = true
+
+[node name="OrigBig" type="Sprite2D" parent="Game" unique_id=620468986]
+position = Vector2(43.22206, 21.750008)
+scale = Vector2(0.5003858, 0.50038576)
+texture = ExtResource("4_ifsai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game" unique_id=441846053]
+position = Vector2(4, 253)
+shape = SubResource("RectangleShape2D_ow4jf")

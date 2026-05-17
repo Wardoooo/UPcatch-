@@ -27,11 +27,11 @@ void OnPhysicsProcess(Caller* instance, double _delta)
 	float direction = 0.0f;
 	if (input->is_action_pressed("ui_left")) {
 		direction -= 1.0f;
-		UtilityFunctions::print("LEFT PRESSED");
+		
 	}
 	if (input->is_action_pressed("ui_right")) {
 		direction += 1.0f;
-		UtilityFunctions::print("RIGHT PRESSED");
+		
 	}
 	float current_speed = speed;
 	if (input->is_action_pressed("ui_accept"))

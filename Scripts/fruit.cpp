@@ -5,36 +5,19 @@
 using namespace godot;
 using namespace jenova::sdk;
 
-// Per-instance state — no globals!
 struct FruitState
 {
 	Area2D* self = nullptr;
 	float speed = 80.0f;
 	bool caught = false;
+	int frames = 0; // per-instance frame counter
 };
 
 FruitState* GetState(Caller* instance)
 {
-	// Store state pointer in instance metadata
 	Area2D* self = GetSelf<Area2D>(instance);
-	if (!self) return nullptr;
-	if (!self->has_meta("state"))
-		return nullptr;
+	if (!self || !self->has_meta("state")) return nullptr;
 	return (FruitState*)(int64_t)self->get_meta("state");
-}
-
-void OnAreaEntered(Area2D* fruit_area, Area2D* other_area)
-{
-	FruitState* state = (FruitState*)(int64_t)fruit_area->get_meta("state");
-	if (!state || state->caught) return;
-
-	if (other_area->get_name() == StringName("CollisionArea") ||
-		other_area->is_in_group("player_catcher"))
-	{
-		state->caught = true;
-		fruit_area->hide();      // instantly invisible
-		fruit_area->queue_free(); // then cleaned up next frame
-	}
 }
 
 JENOVA_SCRIPT_BEGIN
@@ -45,6 +28,7 @@ void OnAwake(Caller* instance)
 	FruitState* state = new FruitState();
 	state->self = self;
 	state->caught = false;
+	state->frames = 0;
 	self->set_meta("state", (int64_t)state);
 }
 
@@ -59,28 +43,43 @@ void OnDestroy(Caller* instance)
 	}
 }
 
-void OnReady(Caller* instance)
-{
-	Area2D* self = GetSelf<Area2D>(instance);
-	self->connect(
-		"area_entered",
-		Callable(self, "OnAreaEntered")
-	);
-}
-
 void OnProcess(Caller* instance, double _delta)
 {
 	FruitState* state = GetState(instance);
 	if (!state || state->caught) return;
 
+	// Move down
 	Vector2 pos = state->self->get_position();
 	pos.y += state->speed * (float)_delta;
 	state->self->set_position(pos);
 
+	// Fell off screen
 	if (pos.y > 1200.0f)
 	{
 		state->caught = true;
 		state->self->queue_free();
+		return;
+	}
+
+	// Wait a few frames for physics to register
+	state->frames++;
+	if (state->frames < 5) return;
+
+	// Check overlaps every frame
+	Array overlaps = state->self->get_overlapping_areas();
+	for (int i = 0; i < overlaps.size(); i++)
+	{
+		Area2D* area = Object::cast_to<Area2D>(overlaps[i]);
+		if (!area) continue;
+
+		if (area->get_name() == StringName("CollisionArea") ||
+			area->is_in_group("player_catcher"))
+		{
+			state->caught = true;
+			state->self->hide();
+			state->self->queue_free();
+			return;
+		}
 	}
 }
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UPCATCH"
-run/main_scene="uid://q4wuqjj0t0qk"
+run/main_scene="uid://bn64p6pai50b0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

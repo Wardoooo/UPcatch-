@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://c6csbtdr205kh" path="res://BG/orig_big1.png" id="1_ouk20"]
+[ext_resource type="Script" uid="uid://cxadmbuc20bdd" path="res://startwhenpressed.cpp" id="3_mae5d"]
 
 [node name="Menu" type="Node2D" unique_id=1216456431]
 position = Vector2(3, -4)
@@ -41,6 +42,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_lti8b")
 theme_override_font_sizes/font_size = 50
 text = "START"
+script = ExtResource("3_mae5d")
 
 [node name="Quit" type="Button" parent="MainMenu" unique_id=1936063375]
 layout_mode = 0

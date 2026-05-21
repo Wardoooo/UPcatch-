@@ -14,7 +14,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="BG" type="Sprite2D" parent="MainMenu" unique_id=1982925904]
-position = Vector2(575, 325)
+position = Vector2(576.00006, 360.00003)
 scale = Vector2(0.5113812, 0.5113812)
 texture = ExtResource("1_ouk20")
 

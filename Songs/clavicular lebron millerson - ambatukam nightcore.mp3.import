@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://p5hiv4xbani"
+path="res://.godot/imported/clavicular lebron millerson - ambatukam nightcore.mp3-a1406a8104f4beb45348a6bbd120d6d3.mp3str"
+
+[deps]
+
+source_file="res://Songs/clavicular lebron millerson - ambatukam nightcore.mp3"
+dest_files=["res://.godot/imported/clavicular lebron millerson - ambatukam nightcore.mp3-a1406a8104f4beb45348a6bbd120d6d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

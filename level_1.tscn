@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://d1et2vkva50ga" path="res://player.tscn" id="5_rka8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
-size = Vector2(1558.5, 111)
+size = Vector2(2387.25, 111)
 
 [node name="level_1" type="Node2D" unique_id=1187957639]
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1180861286]
-position = Vector2(567, 330)
-scale = Vector2(0.5462963, 0.5462963)
+position = Vector2(931.3334, 530.5)
+scale = Vector2(0.8625579, 0.8557099)
 texture = ExtResource("1_hbghi")
 
 [node name="FruitSpawner" type="Node2D" parent="." unique_id=306492895]
@@ -48,10 +48,10 @@ offset_bottom = 23.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1302453133 instance=ExtResource("5_rka8t")]
-position = Vector2(639, 211)
+position = Vector2(960, 622)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=525946216]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=157031895]
-position = Vector2(498, 620)
+position = Vector2(908, 1031)
 shape = SubResource("RectangleShape2D_hbghi")

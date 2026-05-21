@@ -929,7 +929,7 @@ texture = ExtResource("4_gua44")
 sources/0 = SubResource("TileSetAtlasSource_5wqtm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgoo7"]
-size = Vector2(1937, 117)
+size = Vector2(1968.5, 113.5)
 
 [node name="UP_7TH" type="Node2D" unique_id=1430925641]
 
@@ -959,5 +959,5 @@ tile_set = SubResource("TileSet_b2hbf")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=72685358]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1926695811]
-position = Vector2(985, 1068)
+position = Vector2(969.25, 1069.75)
 shape = SubResource("RectangleShape2D_kgoo7")

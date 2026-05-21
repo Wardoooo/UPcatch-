@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://drlvego0vwc40"]
+[gd_scene format=3 uid="uid://fhyrtmdqtv2j"]
 
-[ext_resource type="Script" uid="uid://c7kok26fw57xx" path="res://Scripts/fruit.cpp" id="1_7yftu"]
-[ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Textures/POTAAAAAANGERNAAAA1.png" id="2_t45jj"]
+[ext_resource type="Script" uid="uid://c7kok26fw57xx" path="res://Scripts/fruit.cpp" id="1_4q5ss"]
+[ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Textures/POTAAAAAANGERNAAAA1.png" id="2_kv54i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t45jj"]
 radius = 64.00781
 
 [node name="24CHICKEN" type="Area2D" unique_id=1260092324]
 collision_mask = 2
-script = ExtResource("1_7yftu")
+script = ExtResource("1_4q5ss")
 
 [node name="FruitSprite" type="Sprite2D" parent="." unique_id=172782958]
 position = Vector2(510.75, 336.75)
 scale = Vector2(3.3906243, 3.3906243)
-texture = ExtResource("2_t45jj")
+texture = ExtResource("2_kv54i")
 region_enabled = true
 region_rect = Rect2(184, 32, 48, 48)
 region_filter_clip_enabled = true

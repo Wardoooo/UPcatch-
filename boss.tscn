@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://ndbwvlr4kksu"]
 
-[node name="boss" type="Node2D" unique_id=136324110]
+[ext_resource type="Texture2D" uid="uid://dgoeb1b8xejgw" path="res://BG/13.png" id="1_0bnu1"]
+
+[node name="Sprite2D" type="Node2D" unique_id=1162032942]
+position = Vector2(956, 540)
+scale = Vector2(1.0041667, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1145142283]
+texture = ExtResource("1_0bnu1")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=111064647]
+color = Color(0.27376294, 0.17505446, 0.24977526, 1)
+energy = 16.0

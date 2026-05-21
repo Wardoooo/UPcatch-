@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://blmpnuvn6lctt"]
 
+[ext_resource type="Texture2D" uid="uid://b3ba13uekeuee" path="res://BG/2.png" id="1_jg0dc"]
+
 [node name="level_2" type="Node2D" unique_id=2005041411]
 
 [node name="BG" type="Sprite2D" parent="." unique_id=2091785156]
+position = Vector2(967, 546)
+texture = ExtResource("1_jg0dc")
 
 [node name="FruitSpawner" type="Node2D" parent="." unique_id=1359094098]
 

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cx42ibyvbtxdp"]
+
+[ext_resource type="Texture2D" uid="uid://cosh3vnfxj8g0" path="res://Assets/Textures/POTAAAAAANGERNAAAA2.png" id="1_s0vfr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t8hu"]
+size = Vector2(293.5, 182)
+
+[node name="Edward" type="CharacterBody2D" unique_id=1056890969]
+
+[node name="BodySprite" type="Sprite2D" parent="." unique_id=1527641902]
+position = Vector2(811.24994, 669.75)
+scale = Vector2(6.2395825, 5.323864)
+texture = ExtResource("1_s0vfr")
+region_enabled = true
+region_rect = Rect2(152, 200, 48, 88)
+
+[node name="CollisionArea" type="Area2D" parent="." unique_id=843417154]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1632687433]
+position = Vector2(808, 537)
+shape = SubResource("RectangleShape2D_6t8hu")
+debug_color = Color(0.9635666, 0.16272762, 0.2695721, 0.41960785)

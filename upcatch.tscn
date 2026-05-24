@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bwxwit0uk4clf"]
 
+[ext_resource type="PackedScene" uid="uid://bn64p6pai50b0" path="res://menu.tscn" id="1_cbhtw"]
+
 [node name="upcatch" type="Node2D" unique_id=2130857040]
 
 [node name="CurrentLevel" type="Node2D" parent="." unique_id=1797316709]
@@ -8,6 +10,9 @@ position = Vector2(534, 306)
 [node name="UI" type="Node2D" parent="." unique_id=543882517]
 
 [node name="Menu" type="Node2D" parent="UI" unique_id=1354117985]
+
+[node name="Menu" parent="UI/Menu" unique_id=1216456431 instance=ExtResource("1_cbhtw")]
+position = Vector2(146, 61)
 
 [node name="UI" type="Node2D" parent="UI" unique_id=310277740]
 

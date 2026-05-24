@@ -2,27 +2,16 @@
 #include <Godot/classes/area2d.hpp>
 #include <Godot/classes/node.hpp>
 #include <Godot/classes/sprite2d.hpp>
-#include <Godot/classes/resource_loader.hpp>
-#include <Godot/classes/texture2d.hpp>
 
 using namespace godot;
 using namespace jenova::sdk;
 
 struct FruitState
 {
-	Area2D* self = nullptr;
-
-	Sprite2D* sprite = nullptr;
-
-	float speed = 80.0f;
-
-	bool caught = false;
-
-	int frames = 0;
-
-	int fruitIndex = 0;
-
-	Ref<Texture2D> spriteSheet;
+	Area2D* self   = nullptr;
+	float speed    = 80.0f;
+	bool caught    = false;
+	int frames     = 0;
 };
 
 FruitState* GetState(Caller* instance)
@@ -44,81 +33,11 @@ void OnAwake(Caller* instance)
 
 	FruitState* state = new FruitState();
 
-	state->self = self;
-
-	//------------------------------------------------
-	// GET SPRITE NODE
-	//------------------------------------------------
-
-	state->sprite =
-		self->get_node<Sprite2D>(
-			NodePath("Sprite2D"));
-
-	//------------------------------------------------
-	// LOAD SPRITESHEET
-	//------------------------------------------------
-
-	state->spriteSheet =
-		ResourceLoader::get_singleton()
-		->load(
-			"res://Assets/Textures/POTAAAAAANGERNAAAA1.png"
-		);
-
-	if (state->spriteSheet.is_valid())
-	{
-		state->sprite->set_texture(
-			state->spriteSheet
-		);
-	}
-
-	//------------------------------------------------
-	// ENABLE REGION MODE
-	//------------------------------------------------
-
-	state->sprite->set_region_enabled(true);
-
-	//------------------------------------------------
-	// SPRITESHEET SETTINGS
-	//------------------------------------------------
-
-	int fruitSize = 32;
-
-	int totalFruits = 3;
-
-	//------------------------------------------------
-	// RANDOM FRUIT
-	//------------------------------------------------
-
-	state->fruitIndex =
-		rand() % totalFruits;
-
-	//------------------------------------------------
-	// CREATE REGION RECT
-	//------------------------------------------------
-
-	Rect2 region(
-		state->fruitIndex * fruitSize,
-		0,
-		fruitSize,
-		fruitSize
-	);
-
-	//------------------------------------------------
-	// APPLY REGION
-	//------------------------------------------------
-
-	state->sprite->set_region_rect(region);
-
-	//------------------------------------------------
-
+	state->self   = self;
 	state->caught = false;
-
 	state->frames = 0;
 
-	self->set_meta(
-		"state",
-		(int64_t)state
-	);
+	self->set_meta("state", (int64_t)state);
 }
 
 void OnDestroy(Caller* instance)
@@ -148,12 +67,9 @@ void OnProcess(Caller* instance, double _delta)
 	// MOVE DOWN
 	//------------------------------------------------
 
-	Vector2 pos =
-		state->self->get_position();
+	Vector2 pos = state->self->get_position();
 
-	pos.y +=
-		state->speed *
-		(float)_delta;
+	pos.y += state->speed * (float)_delta;
 
 	state->self->set_position(pos);
 
@@ -196,11 +112,7 @@ void OnProcess(Caller* instance, double _delta)
 		if (!area)
 			continue;
 
-		if (
-			area->is_in_group(
-				"player_catcher"
-			)
-		)
+		if (area->is_in_group("player_catcher"))
 		{
 			state->caught = true;
 
@@ -208,9 +120,7 @@ void OnProcess(Caller* instance, double _delta)
 
 			state->self->queue_free();
 
-			UtilityFunctions::print(
-				"FRUIT CAUGHT"
-			);
+			UtilityFunctions::print("FRUIT CAUGHT");
 
 			return;
 		}

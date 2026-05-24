@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7ts1h74yne8u" path="res://Assets/NINJATILESET/tileset_camp.png" id="2_h0tsu"]
 [ext_resource type="Texture2D" uid="uid://dbira3ydxg1y2" path="res://Assets/NINJATILESET/TX Tileset Grass.png" id="3_h0tsu"]
 [ext_resource type="Texture2D" uid="uid://b8uil88l8jupl" path="res://Assets/NINJATILESET/TilesetNature.png" id="4_gua44"]
-[ext_resource type="PackedScene" uid="uid://d1et2vkva50ga" path="res://player.tscn" id="5_kgoo7"]
+[ext_resource type="PackedScene" uid="uid://d1et2vkva50ga" path="res://Neiljan.tscn" id="5_kgoo7"]
 [ext_resource type="Texture2D" uid="uid://b3ba13uekeuee" path="res://BG/2.png" id="6_kgoo7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gsvh"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dyokmgbww8dfj" path="res://BG/orig_big.png" id="1_hbghi"]
 [ext_resource type="Script" uid="uid://j7pc0bhy0n4l" path="res://Scripts/testfruitspawner.cpp" id="2_ihfcg"]
-[ext_resource type="PackedScene" uid="uid://d1et2vkva50ga" path="res://player.tscn" id="5_rka8t"]
+[ext_resource type="PackedScene" uid="uid://d1et2vkva50ga" path="res://Neiljan.tscn" id="5_rka8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
 size = Vector2(2387.25, 111)

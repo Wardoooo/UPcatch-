@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dfla32a1ypb1m"]
+
+[ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Textures/POTAAAAAANGERNAAAA1.png" id="2_ph5eb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6afm0"]
+radius = 34.0
+height = 160.0
+
+[node name="REDBULL" type="Area2D" unique_id=501612277]
+
+[node name="FruitSprite" type="Sprite2D" parent="." unique_id=1893895147]
+position = Vector2(510.75, 336.75)
+scale = Vector2(3.3906243, 3.3906243)
+texture = ExtResource("2_ph5eb")
+region_enabled = true
+region_rect = Rect2(288, 32, 32, 56)
+region_filter_clip_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1834781972]
+position = Vector2(509, 332)
+shape = SubResource("CapsuleShape2D_6afm0")
+debug_color = Color(0.20421302, 0.57729346, 0.75299233, 0.41960785)

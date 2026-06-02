@@ -8,6 +8,7 @@ radius = 34.0
 height = 136.0
 
 [node name="LUCKYDAY" type="Area2D" unique_id=501612277]
+z_index = 10
 script = ExtResource("1_fdplt")
 
 [node name="FruitSprite" type="Sprite2D" parent="." unique_id=1893895147]

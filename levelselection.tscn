@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b6nly1mo7v5p8"]
+
+[ext_resource type="Script" uid="uid://yi0ga8jhokky" path="res://Scripts/LevelSwitch/level1button.cpp" id="1_4v0y6"]
+[ext_resource type="PackedScene" uid="uid://d2rffbkjk6y57" path="res://notes.tscn" id="1_js3ie"]
+[ext_resource type="Script" uid="uid://d1lmg4u4fater" path="res://Scripts/LevelSwitch/bossbutton.cpp" id="1_mvrvb"]
+[ext_resource type="Script" uid="uid://1br05x8nm1te" path="res://Scripts/LevelSwitch/level3button.cpp" id="1_nx5iw"]
+[ext_resource type="Script" uid="uid://cciv2foow8ng8" path="res://Scripts/LevelSwitch/level2button.cpp" id="1_p4dlm"]
+[ext_resource type="Script" uid="uid://ca3ksref3533h" path="res://Scripts/LevelSwitch/endlessbutton.cpp" id="1_q2imn"]
+
+[node name="Node2D" type="Node2D" unique_id=166106774]
+
+[node name="Level Selection" type="Control" parent="." unique_id=230178568]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Boss" type="Button" parent="Level Selection" unique_id=1233129707]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 686.0
+offset_right = 826.0
+offset_bottom = 873.0
+text = "Boss"
+script = ExtResource("1_mvrvb")
+
+[node name="Endless" type="Button" parent="Level Selection" unique_id=43719857]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 455.0
+offset_right = 1638.0
+offset_bottom = 599.0
+text = "Endless"
+script = ExtResource("1_q2imn")
+
+[node name="Level3" type="Button" parent="Level Selection" unique_id=2016745552]
+layout_mode = 0
+offset_left = 886.0
+offset_top = 217.0
+offset_right = 1325.0
+offset_bottom = 359.0
+text = "Level 3
+"
+script = ExtResource("1_nx5iw")
+
+[node name="Level2" type="Button" parent="Level Selection" unique_id=1111554657]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 366.0
+offset_right = 662.0
+offset_bottom = 483.0
+text = "Level 2
+"
+script = ExtResource("1_p4dlm")
+
+[node name="Level1" type="Button" parent="Level Selection" unique_id=1091237115]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 149.0
+offset_right = 646.0
+offset_bottom = 253.0
+text = "Level 1"
+script = ExtResource("1_4v0y6")
+
+[node name="Notes" parent="." unique_id=806682114 instance=ExtResource("1_js3ie")]

@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://b3ba13uekeuee" path="res://BG/2.png" id="1_mae5d"]
-[ext_resource type="Script" uid="uid://cxadmbuc20bdd" path="res://startwhenpressed.cpp" id="3_mae5d"]
+[ext_resource type="Script" uid="uid://cxadmbuc20bdd" path="res://Scripts/startwhenpressed.cpp" id="3_mae5d"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4hy44"]
 

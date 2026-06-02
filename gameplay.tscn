@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cfqfn3ru65for"]
+
+[ext_resource type="Script" uid="uid://bbbd3cvdf234c" path="res://Scripts/FruitLogic/SPAWNER.cpp" id="1_oe8ih"]
+[ext_resource type="PackedScene" uid="uid://fhyrtmdqtv2j" path="res://24chicken.tscn" id="2_0m7cd"]
+[ext_resource type="PackedScene" uid="uid://dneq2y0fj8sc4" path="res://LUCKYDAY.tscn" id="2_xuee5"]
+[ext_resource type="PackedScene" uid="uid://2rvykd07870u" path="res://malunggay.tscn" id="4_2ihbs"]
+[ext_resource type="PackedScene" uid="uid://cclu7ckkml13j" path="res://vscode.tscn" id="5_1qy1k"]
+[ext_resource type="PackedScene" uid="uid://crgdixkkmdfim" path="res://uplogo.tscn" id="6_3n40r"]
+[ext_resource type="PackedScene" uid="uid://dfla32a1ypb1m" path="res://redbull.tscn" id="7_45aep"]
+
+[node name="Gameplay" type="Node2D" unique_id=1809894304]
+process_mode = 3
+script = ExtResource("1_oe8ih")
+
+[node name="24CHICKEN" parent="." unique_id=1260092324 instance=ExtResource("2_0m7cd")]
+process_mode = 3
+position = Vector2(19, -463)
+script = null
+
+[node name="MALUNGGAY" parent="." unique_id=501612277 instance=ExtResource("4_2ihbs")]
+position = Vector2(2, -490)
+script = null
+
+[node name="VSCODE" parent="." unique_id=1595486258 instance=ExtResource("5_1qy1k")]
+position = Vector2(31, -499)
+script = null
+
+[node name="UPLOGO" parent="." unique_id=812297017 instance=ExtResource("6_3n40r")]
+position = Vector2(17, -471)
+script = null
+
+[node name="REDBULL" parent="." unique_id=188706530 instance=ExtResource("7_45aep")]
+position = Vector2(16, -454)
+
+[node name="LUCKYDAY" parent="." unique_id=668199751 instance=ExtResource("2_xuee5")]
+position = Vector2(8, -479)
+script = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=871215840]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=426001027]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=270013460]
+layout_mode = 2
+text = "Score: "
+vertical_alignment = 1
+
+[node name="MultiplierLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=408223524]
+layout_mode = 2
+text = "Combo:"
+
+[node name="AccuracyLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1462290202]
+layout_mode = 2
+text = "Accuracy:"

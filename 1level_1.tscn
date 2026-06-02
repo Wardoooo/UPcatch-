@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://q4wuqjj0t0qk"]
+
+[ext_resource type="Texture2D" uid="uid://dyokmgbww8dfj" path="res://BG/orig_big.png" id="1_hbghi"]
+[ext_resource type="PackedScene" uid="uid://cfqfn3ru65for" path="res://gameplay.tscn" id="1_lbikw"]
+[ext_resource type="PackedScene" uid="uid://cx42ibyvbtxdp" path="res://edward.tscn" id="4_ihfcg"]
+[ext_resource type="Script" uid="uid://rsiwgxghpq6" path="res://Scripts/movement.cpp" id="5_rka8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
+size = Vector2(2387.25, 111)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i8cwj"]
+normal = Vector2(-0.00423725, -0.999991)
+distance = -517.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbikw"]
+normal = Vector2(0, 1)
+distance = -24.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dvnhh"]
+normal = Vector2(0, 1)
+distance = 21.013748
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cx3bg"]
+
+[node name="level_1" type="Node2D" unique_id=1187957639]
+
+[node name="Gameplay" parent="." unique_id=1809894304 instance=ExtResource("1_lbikw")]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1180861286]
+position = Vector2(931.3334, 530.5)
+scale = Vector2(0.8625579, 0.8557099)
+texture = ExtResource("1_hbghi")
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1385530575]
+
+[node name="DangerFruits" type="Node2D" parent="." unique_id=374544171]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1571113477]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1255266727]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1328525777]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HpLabel" type="Label" parent="HUD" unique_id=1587131971]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ComboLabel" type="Label" parent="HUD" unique_id=963481864]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AccuracyLabel" type="Label" parent="HUD" unique_id=1098618257]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Edward" parent="." unique_id=1056890969 instance=ExtResource("4_ihfcg")]
+position = Vector2(46, 193)
+script = ExtResource("5_rka8t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=525946216]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=157031895]
+position = Vector2(908, 1031)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="WorldBoundBotLEFT" type="CollisionShape2D" parent="StaticBody2D" unique_id=1558730266]
+position = Vector2(-63, 458)
+shape = SubResource("WorldBoundaryShape2D_i8cwj")
+
+[node name="WorldBoundTopLEFT" type="CollisionShape2D" parent="StaticBody2D" unique_id=1368960095]
+position = Vector2(-60, 1)
+shape = SubResource("WorldBoundaryShape2D_lbikw")
+
+[node name="WorldBountTopRIGHT" type="CollisionShape2D" parent="StaticBody2D" unique_id=93932882]
+position = Vector2(1924, -43)
+shape = SubResource("WorldBoundaryShape2D_dvnhh")
+
+[node name="WorldBoundBotRIGHT" type="CollisionShape2D" parent="StaticBody2D" unique_id=554631244]
+position = Vector2(1925, 975)
+shape = SubResource("WorldBoundaryShape2D_cx3bg")

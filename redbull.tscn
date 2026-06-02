@@ -7,6 +7,7 @@ radius = 34.0
 height = 160.0
 
 [node name="REDBULL" type="Area2D" unique_id=501612277]
+z_index = 10
 
 [node name="FruitSprite" type="Sprite2D" parent="." unique_id=1893895147]
 position = Vector2(510.75, 336.75)

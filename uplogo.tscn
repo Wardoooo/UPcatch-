@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://crgdixkkmdfim"]
 
-[ext_resource type="Script" uid="uid://c7kok26fw57xx" path="res://Scripts/fruit.cpp" id="1_3ihag"]
 [ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Textures/POTAAAAAANGERNAAAA1.png" id="2_3sdbw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ihag"]
@@ -8,7 +7,6 @@ radius = 89.106674
 
 [node name="UPLOGO" type="Area2D" unique_id=501612277]
 z_index = 10
-script = ExtResource("1_3ihag")
 
 [node name="FruitSprite" type="Sprite2D" parent="." unique_id=1893895147]
 position = Vector2(514.90625, 345.40628)

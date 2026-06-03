@@ -51,14 +51,6 @@ void OnPhysicsProcess(Caller* instance, double _delta)
 	self->set_velocity(velocity);
 	self->move_and_slide();
 
-	Vector2 pos = self->get_position();
-	
-
-	if (pos.x > 1200.0f) pos.x = -1100.0f;
-	if (pos.x < -1200.0f) pos.x = 1100.0f;
-
-self->set_position(pos);
-	self->set_position(pos);
 }
 
 JENOVA_SCRIPT_END

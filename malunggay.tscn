@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://2rvykd07870u"]
 
-[ext_resource type="Script" uid="uid://c7kok26fw57xx" path="res://Scripts/fruit.cpp" id="1_vl5km"]
 [ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Textures/POTAAAAAANGERNAAAA1.png" id="2_vq6h7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh5eg"]
@@ -8,7 +7,6 @@ size = Vector2(234, 126)
 
 [node name="MALUNGGAY" type="Area2D" unique_id=501612277]
 z_index = 10
-script = ExtResource("1_vl5km")
 
 [node name="FruitSprite" type="Sprite2D" parent="." unique_id=1893895147]
 position = Vector2(540, 323)

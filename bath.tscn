@@ -3,17 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Textures/POTAAAAAANGERNAAAA1.png" id="2_t6mht"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qevb"]
-radius = 123.68508
+radius = 69.02898
 
 [node name="BATH" type="Area2D" unique_id=1733518228]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1280174911]
-position = Vector2(818, 448)
-scale = Vector2(4.767857, 4.8958335)
+position = Vector2(772.75, 491.25)
+scale = Vector2(3.1517851, 3.0937495)
 texture = ExtResource("2_t6mht")
 region_enabled = true
 region_rect = Rect2(0, 96, 56, 48)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=371872468]
-position = Vector2(843, 453)
+position = Vector2(784, 496)
 shape = SubResource("CircleShape2D_8qevb")

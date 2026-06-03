@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cosh3vnfxj8g0" path="res://Assets/Textures/POTAAAAAANGERNAAAA2.png" id="1_s0vfr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t8hu"]
-size = Vector2(159.46875, 98.25)
+size = Vector2(159, 98.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s0vfr"]
 radius = 80.00625
@@ -20,7 +20,7 @@ region_rect = Rect2(320, 192, 80, 104)
 [node name="CollisionArea" type="Area2D" parent="." unique_id=843417154 groups=["player_catcher"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1632687433]
-position = Vector2(725.2656, 569.875)
+position = Vector2(725.5, 569.875)
 shape = SubResource("RectangleShape2D_6t8hu")
 debug_color = Color(0.9635666, 0.16272762, 0.2695721, 0.41960785)
 

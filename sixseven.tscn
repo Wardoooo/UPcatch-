@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://un6q5vly8ak7"]
+
+[ext_resource type="Texture2D" uid="uid://cosh3vnfxj8g0" path="res://Assets/Textures/POTAAAAAANGERNAAAA2.png" id="1_bj6te"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4il46"]
+size = Vector2(126, 84)
+
+[node name="67" type="Area2D" unique_id=238589231]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=638052039]
+position = Vector2(499, 346.25)
+scale = Vector2(3.9000006, 3.3906257)
+texture = ExtResource("1_bj6te")
+region_enabled = true
+region_rect = Rect2(120, 160, 40, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147141325]
+position = Vector2(511, 339)
+shape = SubResource("RectangleShape2D_4il46")
+debug_color = Color(0, 0.6472464, 0.22447711, 0.41960785)

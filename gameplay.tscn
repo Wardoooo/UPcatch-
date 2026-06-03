@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cclu7ckkml13j" path="res://vscode.tscn" id="5_1qy1k"]
 [ext_resource type="PackedScene" uid="uid://crgdixkkmdfim" path="res://uplogo.tscn" id="6_3n40r"]
 [ext_resource type="PackedScene" uid="uid://dfla32a1ypb1m" path="res://redbull.tscn" id="7_45aep"]
+[ext_resource type="PackedScene" uid="uid://un6q5vly8ak7" path="res://sixseven.tscn" id="8_2ihbs"]
+[ext_resource type="PackedScene" uid="uid://djbb5jckuo75b" path="res://bath.tscn" id="9_1qy1k"]
 
 [node name="Gameplay" type="Node2D" unique_id=1809894304]
 process_mode = 3
@@ -30,6 +32,12 @@ position = Vector2(16, -454)
 
 [node name="LUCKYDAY" parent="." unique_id=668199751 instance=ExtResource("2_xuee5")]
 position = Vector2(8, -479)
+
+[node name="67" parent="." unique_id=238589231 instance=ExtResource("8_2ihbs")]
+position = Vector2(23, -466)
+
+[node name="BATH" parent="." unique_id=1733518228 instance=ExtResource("9_1qy1k")]
+position = Vector2(-321, -587)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=871215840]
 

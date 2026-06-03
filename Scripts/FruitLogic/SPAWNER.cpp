@@ -27,10 +27,10 @@ Label* spawner_combo_label    = nullptr;
 Label* spawner_accuracy_label = nullptr;
 
 // score state
-int spawner_score      = 0;
-int spawner_multiplier = 0;
-int spawner_caught     = 0;
-int spawner_total      = 0;
+unsigned long long spawner_score      = 0ULL;
+int                spawner_multiplier = 0;
+int                spawner_caught     = 0;
+int                spawner_total      = 0;
 
 Node2D* spawner_self           = nullptr;
 float   spawner_timer          = 0.0f;
@@ -38,8 +38,12 @@ float   spawner_spawn_interval = 0.0f;
 bool    spawner_initialized    = false;
 
 BPMPresets spawner_bpm_presets;
-float spawner_current_bpm = 130.0f;
+float spawner_current_bpm = 6700.0f;
 float spawner_fall_speed  = 400.0f;
+
+// song timer
+float spawner_song_timer        = 0.0f;
+const float spawner_song_length = 237.0f; // 3min 57sec
 
 RandomNumberGenerator* spawner_rng = nullptr;
 
@@ -49,33 +53,42 @@ const char* spawner_fruit_paths[] = {
 	"res://vscode.tscn",
 	"res://uplogo.tscn",
 	"res://redbull.tscn",
-	"res://LUCKYDAY.tscn"
+	"res://LUCKYDAY.tscn",
+	"res://fruit_matcha.tscn",
+	"res://bath.tscn",
+	"res://sixseven.tscn"
 };
-const int spawner_fruit_path_count = 6;
+const int spawner_fruit_path_count = sizeof(spawner_fruit_paths) / sizeof(spawner_fruit_paths[0]);
 
-Ref<PackedScene> spawner_packed_scenes[6];
+Ref<PackedScene> spawner_packed_scenes[sizeof(spawner_fruit_paths) / sizeof(spawner_fruit_paths[0])];
 
 Node2D* spawner_active[256]      = {};
 bool    spawner_caught_flag[256] = {};
 int     spawner_active_count     = 0;
 
-// Gameplay node is at x=118.253, y=-691.823
-// Screen edges in local space:
-// left  = -960  - 118.253 = -1078 + 80 padding = -998
-// right =  960  - 118.253 =  841  - 80 padding =  761
-// top   = -540  - (-691.823) = 151 - 60 buffer  =  91
-// bottom = 540  - (-691.823) = 1231 + 40 buffer = 1271
-const float spawner_left_bound  = -1500.0f;
-const float spawner_right_bound =  -50.0f;
-const float spawner_top_spawn   =  -300.0f;  // just below screen top edge
-const float spawner_bottom_kill = 691.0f;
+const float spawner_left_bound  = -1300.0f;
+const float spawner_right_bound =   -10.0f;
+const float spawner_top_spawn   =  -300.0f;
+const float spawner_bottom_kill =   691.0f;
+
 JENOVA_SCRIPT_BEGIN
 
 void OnAwake(Caller* instance)
 {
 	spawner_self = GetSelf<Node2D>(instance);
 	spawner_self->set_process(true);
-	spawner_rng  = memnew(RandomNumberGenerator);
+
+	// reset all state so re-running works cleanly
+	spawner_score        = 0ULL;
+	spawner_multiplier   = 0;
+	spawner_caught       = 0;
+	spawner_total        = 0;
+	spawner_timer        = 0.0f;
+	spawner_song_timer   = 0.0f;
+	spawner_active_count = 0;
+	spawner_initialized  = false;
+
+	spawner_rng = memnew(RandomNumberGenerator);
 	spawner_rng->randomize();
 	spawner_spawn_interval = 60.0f / spawner_current_bpm;
 }
@@ -100,6 +113,7 @@ void OnReady(Caller* instance)
 void OnDestroy(Caller* instance)
 {
 	if (spawner_rng) memdelete(spawner_rng);
+	spawner_rng  = nullptr;
 	spawner_self = nullptr;
 }
 
@@ -139,9 +153,9 @@ void OnProcess(Caller* instance, double _delta)
 					spawner_total++;
 					spawner_caught++;
 					spawner_multiplier++;
-					spawner_score += 300 * spawner_multiplier;
+					spawner_score += 300ULL * (unsigned long long)spawner_multiplier;
 					float acc = (float)spawner_caught / spawner_total * 100.0f;
-					UtilityFunctions::print("Caught! Score: ", spawner_score, " x", spawner_multiplier, " Acc: ", acc, "%");
+					UtilityFunctions::print("Caught! Score: ", (int64_t)spawner_score, " x", spawner_multiplier, " Acc: ", acc, "%");
 					fruit->queue_free();
 					spawner_active_count--;
 					spawner_active[i]      = spawner_active[spawner_active_count];
@@ -167,37 +181,47 @@ void OnProcess(Caller* instance, double _delta)
 		next_fruit:;
 	}
 
-	// spawn timer
-	spawner_timer += (float)_delta;
-	if (spawner_timer >= spawner_spawn_interval)
+	// only spawn while song is still playing
+	if (spawner_song_timer < spawner_song_length)
 	{
-		spawner_timer = 0.0f;
+		spawner_song_timer += (float)_delta;
 
-		int pick = spawner_rng->randi_range(0, spawner_fruit_path_count - 1);
-		Ref<PackedScene> scene = spawner_packed_scenes[pick];
-		if (!scene.is_valid()) return;
-
-		Node* fruit_instance = scene->instantiate();
-		if (!fruit_instance) return;
-
-		spawner_self->add_child(fruit_instance);
-
-		Node2D* fruit_node = Object::cast_to<Node2D>(fruit_instance);
-		if (fruit_node && spawner_active_count < 256)
+		spawner_timer += (float)_delta;
+		if (spawner_timer >= spawner_spawn_interval)
 		{
-			float random_x = spawner_rng->randf_range(spawner_left_bound, spawner_right_bound);
-			fruit_node->set_position(Vector2(random_x, spawner_top_spawn));
-			fruit_node->set_visible(true);
-			spawner_active[spawner_active_count]      = fruit_node;
-			spawner_caught_flag[spawner_active_count] = false;
-			spawner_active_count++;
-			UtilityFunctions::print("Spawned fruit at X: ", random_x);
+			spawner_timer = 0.0f;
+
+			int pick = spawner_rng->randi_range(0, spawner_fruit_path_count - 1);
+			Ref<PackedScene> scene = spawner_packed_scenes[pick];
+			if (!scene.is_valid()) return;
+
+			Node* fruit_instance = scene->instantiate();
+			if (!fruit_instance) return;
+
+			spawner_self->add_child(fruit_instance);
+
+			Node2D* fruit_node = Object::cast_to<Node2D>(fruit_instance);
+			if (fruit_node && spawner_active_count < 256)
+			{
+				float random_x = spawner_rng->randf_range(spawner_left_bound, spawner_right_bound);
+				fruit_node->set_position(Vector2(random_x, spawner_top_spawn));
+				fruit_node->set_visible(true);
+				spawner_active[spawner_active_count]      = fruit_node;
+				spawner_caught_flag[spawner_active_count] = false;
+				spawner_active_count++;
+				UtilityFunctions::print("Spawned fruit at X: ", random_x);
+			}
 		}
+	}
+	else if (spawner_active_count == 0)
+	{
+		UtilityFunctions::print("Song ended, all fruits cleared!");
+		// hook end-of-level logic here later
 	}
 
 	// update UI labels
 	if (spawner_score_label)
-		spawner_score_label->set_text("Score: " + String::num_int64(spawner_score));
+		spawner_score_label->set_text("Score: " + String::num_uint64(spawner_score));
 	if (spawner_combo_label)
 		spawner_combo_label->set_text("x" + String::num_int64(spawner_multiplier));
 	if (spawner_accuracy_label)

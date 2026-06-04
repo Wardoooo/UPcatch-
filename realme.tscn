@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b8f4s5fmb1b05"]
+
+[ext_resource type="Texture2D" uid="uid://df53dhosufdd8" path="res://Assets/Textures/20.png" id="1_istg4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_maxig"]
+size = Vector2(338.84842, 242.34009)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_57ily"]
+radius = 210.89491
+
+[node name="realme" type="CharacterBody2D" unique_id=249970811]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=218141663]
+position = Vector2(885.5, 545.5)
+scale = Vector2(0.5676229, 0.6109375)
+texture = ExtResource("1_istg4")
+region_enabled = true
+region_rect = Rect2(640, 136, 488, 640)
+
+[node name="CollisionArea" type="Area2D" parent="." unique_id=176277713 groups=["player_catcher"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1777590814]
+position = Vector2(886.3309, 451.47266)
+scale = Vector2(0.5676229, 0.6109375)
+shape = SubResource("RectangleShape2D_maxig")
+debug_color = Color(0.27920502, 0.6076807, 0.49347448, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1776247851]
+position = Vector2(880.5, 600.50006)
+scale = Vector2(0.5676229, 0.6109375)
+shape = SubResource("CircleShape2D_57ily")
+debug_color = Color(0.6413547, 0.52461475, 0, 0.41960785)

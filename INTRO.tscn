@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bo6ary58cqomi"]
+
+[ext_resource type="VideoStream" uid="uid://qknirj2pxbk7" path="res://Videos/GAMEPROJ_INTRO.ogv" id="1_enhxa"]
+[ext_resource type="Script" uid="uid://dhv34wuva4ve" path="res://INTRO.cpp" id="2_db5k1"]
+
+[node name="Node2D" type="Node2D" unique_id=1944309297]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=956499601]
+texture_filter = 2
+offset_left = -957.0
+offset_top = -541.0
+offset_right = 959.0
+offset_bottom = 539.0
+stream = ExtResource("1_enhxa")
+autoplay = true
+script = ExtResource("2_db5k1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1427962308]

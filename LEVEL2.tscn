@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://odh1hqk3poo1"]
+
+[ext_resource type="Script" uid="uid://twt1xe0thcwn" path="res://Scripts/matcha_spawner.cpp" id="1_vu66x"]
+[ext_resource type="PackedScene" uid="uid://cfqfn3ru65for" path="res://gameplay.tscn" id="2_8kc51"]
+[ext_resource type="Texture2D" uid="uid://dv48j0pbyqve1" path="res://BG/17.png" id="3_vu66x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rka8t"]
+size = Vector2(2375, 63)
+
+[node name="LEVEL2" type="Node2D" unique_id=987197033]
+script = ExtResource("1_vu66x")
+
+[node name="Gameplay" parent="." unique_id=1809894304 instance=ExtResource("2_8kc51")]
+position = Vector2(-102, -657)
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1314330676]
+texture = ExtResource("3_vu66x")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=417960992]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=964308855]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1507520342]
+position = Vector2(-52, 503)
+shape = SubResource("RectangleShape2D_rka8t")

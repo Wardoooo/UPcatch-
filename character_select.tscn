@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bkmhiefm7c0tx"]
+
+[ext_resource type="Script" uid="uid://4ntk3qlb8wew" path="res://Scripts/CharacterSelection/CharacterSelection.cpp" id="1_5duen"]
+[ext_resource type="Texture2D" uid="uid://b844ig315mo6s" path="res://Assets/Textures/19.png" id="2_6yhuy"]
+[ext_resource type="Texture2D" uid="uid://cosh3vnfxj8g0" path="res://Assets/Textures/POTAAAAAANGERNAAAA2.png" id="3_aoibv"]
+[ext_resource type="Texture2D" uid="uid://df53dhosufdd8" path="res://Assets/Textures/20.png" id="4_mn8d4"]
+
+[node name="CharacterSelect" type="Node2D" unique_id=87581349]
+script = ExtResource("1_5duen")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=234612697]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1157787973]
+
+[node name="Preview_axelreal" type="Sprite2D" parent="CanvasLayer" unique_id=123321934]
+position = Vector2(980, 534)
+scale = Vector2(0.6180555, 0.46842098)
+texture = ExtResource("2_6yhuy")
+region_enabled = true
+region_rect = Rect2(640, 120, 368, 728)
+
+[node name="Preview_neiljan" type="Sprite2D" parent="CanvasLayer" unique_id=1747607838]
+position = Vector2(980, 534.00006)
+scale = Vector2(5.1933603, 3.3599832)
+texture = ExtResource("3_aoibv")
+region_enabled = true
+region_rect = Rect2(88, 200, 56, 88)
+
+[node name="Preview_neiljanreal" type="Sprite2D" parent="CanvasLayer" unique_id=1766538292]
+position = Vector2(980.00006, 534.00006)
+scale = Vector2(0.7900943, 0.73333335)
+texture = ExtResource("4_mn8d4")
+region_enabled = true
+region_rect = Rect2(192, 176, 424, 600)
+
+[node name="Preview_realme" type="Sprite2D" parent="CanvasLayer" unique_id=2068860438]
+position = Vector2(964, 534.0001)
+scale = Vector2(0.6454546, 0.6047079)
+texture = ExtResource("4_mn8d4")
+region_enabled = true
+region_rect = Rect2(656, 160, 440, 616)
+
+[node name="Preview_edward" type="Sprite2D" parent="CanvasLayer" unique_id=1487850266]
+position = Vector2(1026, 571)
+scale = Vector2(3.4318182, 3.2291667)
+texture = ExtResource("3_aoibv")
+region_enabled = true
+region_rect = Rect2(320, 200, 88, 96)
+
+[node name="Preview_junereal" type="Sprite2D" parent="CanvasLayer" unique_id=1655900469]
+position = Vector2(998, 571)
+scale = Vector2(0.6342593, 0.55027175)
+texture = ExtResource("2_6yhuy")
+region_enabled = true
+region_rect = Rect2(1080, 136, 432, 736)
+
+[node name="Preview_edward_2" type="Sprite2D" parent="CanvasLayer" unique_id=261035094]
+position = Vector2(997, 571)
+scale = Vector2(0.755, 0.59810126)
+texture = ExtResource("4_mn8d4")
+region_enabled = true
+region_rect = Rect2(1216, 160, 400, 632)
+
+[node name="Preview_edwardreal_3" type="Sprite2D" parent="CanvasLayer" unique_id=292640498]
+position = Vector2(1009, 562)
+scale = Vector2(0.6864035, 0.5258152)
+texture = ExtResource("2_6yhuy")
+region_enabled = true
+region_rect = Rect2(128, 136, 456, 736)
+
+[node name="NameLabel" type="Label" parent="CanvasLayer" unique_id=518889044]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HintLabel" type="Label" parent="CanvasLayer" unique_id=828332612]
+offset_right = 40.0
+offset_bottom = 23.0

@@ -2,8 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dyokmgbww8dfj" path="res://BG/orig_big.png" id="1_hbghi"]
 [ext_resource type="PackedScene" uid="uid://cfqfn3ru65for" path="res://gameplay.tscn" id="1_lbikw"]
-[ext_resource type="PackedScene" uid="uid://cx42ibyvbtxdp" path="res://edward.tscn" id="4_ihfcg"]
-[ext_resource type="Script" uid="uid://cl076w24bsimi" path="res://Scripts/movementforboss.cpp" id="4_lbikw"]
+[ext_resource type="Script" uid="uid://b5i4nq15piope" path="res://Scripts/CharacterSelection/characterloader.cpp" id="2_i8cwj"]
 [ext_resource type="AudioStream" uid="uid://dr8hdd1jtuemc" path="res://songs/strta - Ibalik Niyo Si Tatay Digong (NIGHTCORE).mp3" id="5_lbikw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
@@ -16,15 +15,10 @@ position = Vector2(9, 0)
 scale = Vector2(0.8625579, 0.8557099)
 texture = ExtResource("1_hbghi")
 
-[node name="Gameplay" parent="BG" unique_id=1809894304 instance=ExtResource("1_lbikw")]
-position = Vector2(118.25294, -691.82324)
-scale = Vector2(1.1593425, 1.1686203)
-
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1385530575]
 
-[node name="Edward" parent="." unique_id=1056890969 instance=ExtResource("4_ihfcg")]
-position = Vector2(-710, -347)
-script = ExtResource("4_lbikw")
+[node name="PlayerSpawner" type="Node2D" parent="." unique_id=795549956]
+script = ExtResource("2_i8cwj")
 
 [node name="DangerFruits" type="Node2D" parent="." unique_id=374544171]
 
@@ -33,27 +27,8 @@ stream = ExtResource("5_lbikw")
 volume_db = 24.0
 autoplay = true
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1255266727]
-
-[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1328525777]
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
-
-[node name="HpLabel" type="Label" parent="HUD" unique_id=1587131971]
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
-
-[node name="ComboLabel" type="Label" parent="HUD" unique_id=963481864]
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
-
-[node name="AccuracyLabel" type="Label" parent="HUD" unique_id=1098618257]
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
+[node name="Gameplay" parent="." unique_id=1809894304 groups=["fruit_spawner"] instance=ExtResource("1_lbikw")]
+position = Vector2(111.00001, -592)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=525946216]
 
@@ -62,6 +37,7 @@ position = Vector2(116.6875, 500)
 shape = SubResource("RectangleShape2D_hbghi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=359983613]
+zoom = Vector2(0.1, 0.1)
 limit_left = -960
 limit_top = -540
 limit_right = 960

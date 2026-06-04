@@ -5,52 +5,43 @@
 #include <Godot/classes/viewport.hpp>
 #include <Godot/variant/vector2.hpp>
 #include <Godot/variant/utility_functions.hpp>
-
 using namespace godot;
 using namespace jenova::sdk;
-
 CharacterBody2D* self = nullptr;
-
 JENOVA_SCRIPT_BEGIN
-
 float speed = 900.0f;
 float dash_multiplier = 2.0f;
-
+const float warp_right_edge = 336.0f;
+const float warp_left_edge  = -1749.0f;
 void OnAwake(Caller* instance)
 {
 	self = GetSelf<CharacterBody2D>(instance);
 }
-
 void OnDestroy(Caller* instance)
 {
 	self = nullptr;
 }
-
 void OnReady(Caller* instance)
 {
 }
-
 void OnPhysicsProcess(Caller* instance, double _delta)
 {
 	Input* input = Input::get_singleton();
 	float direction = 0.0f;
-
 	if (input->is_action_pressed("ui_left")) direction -= 1.0f;
 	if (input->is_action_pressed("ui_right")) direction += 1.0f;
-
 	float current_speed = speed;
 	if (input->is_action_pressed("ui_accept"))
 		current_speed *= dash_multiplier;
-
 	Vector2 velocity = self->get_velocity();
 	velocity.x = direction * current_speed;
-
 	if (!self->is_on_floor())
 		velocity.y += 980.0f * (float)_delta;
-
 	self->set_velocity(velocity);
 	self->move_and_slide();
-
+	Vector2 pos = self->get_position();
+	if (pos.x > warp_right_edge) pos.x = warp_left_edge  + 5.0f;
+	if (pos.x < warp_left_edge)  pos.x = warp_right_edge - 5.0f;
+	self->set_position(pos);
 }
-
 JENOVA_SCRIPT_END

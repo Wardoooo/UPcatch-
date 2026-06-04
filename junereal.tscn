@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d13vhg8qgn12l"]
+
+[ext_resource type="Texture2D" uid="uid://b844ig315mo6s" path="res://Assets/Textures/19.png" id="1_4beas"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x01w"]
+size = Vector2(262, 155)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydwoy"]
+radius = 158.68523
+
+[node name="Junereal" type="CharacterBody2D" unique_id=1328957830]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1934646082]
+position = Vector2(919.5, 510.5)
+scale = Vector2(0.7795454, 0.64972526)
+texture = ExtResource("1_4beas")
+region_enabled = true
+region_rect = Rect2(1088, 136, 440, 728)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1107728239 groups=["player_catcher"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=447454414]
+position = Vector2(899.5, 364)
+shape = SubResource("RectangleShape2D_0x01w")
+debug_color = Color(0.35137177, 0.5871563, 0.5556458, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=823480850]
+position = Vector2(909.5, 578.5)
+shape = SubResource("CircleShape2D_ydwoy")
+debug_color = Color(0.5306323, 0.51541066, 0.6668571, 0.41960785)

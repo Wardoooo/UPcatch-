@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="UPCATCH"
-run/main_scene="uid://bn64p6pai50b0"
+run/main_scene="uid://bo6ary58cqomi"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*uid://djb1rsled6t8c"
 
 [display]
 

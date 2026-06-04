@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dd5jj6tvf7gn4"]
+
+[ext_resource type="Texture2D" uid="uid://df53dhosufdd8" path="res://Assets/Textures/20.png" id="1_p07hn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eei3t"]
+size = Vector2(254.5, 145)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xebhr"]
+radius = 118.08895
+
+[node name="edward2" type="CharacterBody2D" unique_id=1768628171]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=130375336]
+position = Vector2(916.99994, 481.0828)
+scale = Vector2(0.75490195, 0.6002586)
+texture = ExtResource("1_p07hn")
+region_enabled = true
+region_rect = Rect2(1216, 152, 408, 640)
+
+[node name="CollisionArea" type="Area2D" parent="." unique_id=412326807 groups=["player_catcher"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1405206926]
+position = Vector2(917.75, 378.5827)
+shape = SubResource("RectangleShape2D_eei3t")
+debug_color = Color(0.9734506, 0.16239452, 0.057853475, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1556688676]
+position = Vector2(911, 543.0827)
+shape = SubResource("CircleShape2D_xebhr")
+debug_color = Color(0.55694854, 0.54215115, 0.41475406, 0.41960785)

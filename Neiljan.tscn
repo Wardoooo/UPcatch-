@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1et2vkva50ga"]
 
-[ext_resource type="Script" uid="uid://rsiwgxghpq6" path="res://Scripts/movement.cpp" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://cl076w24bsimi" path="res://Scripts/movementforboss.cpp" id="1_d1682"]
 [ext_resource type="Texture2D" uid="uid://cosh3vnfxj8g0" path="res://Assets/Textures/POTAAAAAANGERNAAAA2.png" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
@@ -9,9 +9,9 @@ size = Vector2(118, 85)
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 67.02985
 
-[node name="Player" type="CharacterBody2D" unique_id=1302453133]
-position = Vector2(622, 262)
-script = ExtResource("1_onrkg")
+[node name="Player" type="Node2D" unique_id=2023614451]
+position = Vector2(54, -316)
+script = ExtResource("1_d1682")
 
 [node name="BodySprite" type="Sprite2D" parent="." unique_id=2146109761]
 position = Vector2(-42, 279)
@@ -20,15 +20,13 @@ texture = ExtResource("2_onrkg")
 region_enabled = true
 region_rect = Rect2(88, 200, 56, 88)
 
-[node name="CollisionArea" type="Area2D" parent="." unique_id=1271091386]
+[node name="Area2D" type="Area2D" parent="." unique_id=1271091386 groups=["player_catcher"]]
 position = Vector2(-50, 216.5)
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=657011480]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=657011480]
 shape = SubResource("RectangleShape2D_onrkg")
 debug_color = Color(0.9992567, 0, 0.13233244, 0.41960785)
-
-[node name="CatcheffectSprite" type="Sprite2D" parent="." unique_id=652241580]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1031207710]
 position = Vector2(-46, 308)

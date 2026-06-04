@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://odh1hqk3poo1"]
-
-[ext_resource type="Script" uid="uid://twt1xe0thcwn" path="res://Scripts/matcha_spawner.cpp" id="2_ihfcg"]
-
-[node name="MatchaSpawner" type="Node2D" unique_id=987197033]
-script = ExtResource("2_ihfcg")

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ddhahea25mbvi"]
+
+[ext_resource type="Texture2D" uid="uid://b844ig315mo6s" path="res://Assets/Textures/19.png" id="1_dd0oi"]
+[ext_resource type="Script" uid="uid://cl076w24bsimi" path="res://Scripts/movementforboss.cpp" id="1_gwp01"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwp01"]
+size = Vector2(300.5, 182)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_deivw"]
+radius = 155.08063
+
+[node name="AxelREAL" type="CharacterBody2D" unique_id=1545272807]
+position = Vector2(-215, 102)
+script = ExtResource("1_gwp01")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1472283526]
+position = Vector2(14, -39)
+scale = Vector2(0.8842593, 0.7390111)
+texture = ExtResource("1_dd0oi")
+region_enabled = true
+region_rect = Rect2(632, 120, 432, 728)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1862563648 groups=["player_catcher"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1022928474]
+position = Vector2(-6.75, -192.99997)
+shape = SubResource("RectangleShape2D_gwp01")
+debug_color = Color(0.78708404, 0.42492458, 0.21571574, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1526131761]
+position = Vector2(-3, 59)
+shape = SubResource("CircleShape2D_deivw")
+debug_color = Color(0.4331819, 0.58312047, 0.41751808, 0.41960785)

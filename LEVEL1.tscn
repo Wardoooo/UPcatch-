@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://d14um44rrqgrk"]
+
+[ext_resource type="Texture2D" uid="uid://cwv5tby7lp8n7" path="res://BG/14.png" id="1_a75kb"]
+[ext_resource type="Script" uid="uid://rsiwgxghpq6" path="res://Scripts/movement.cpp" id="2_h05g5"]
+[ext_resource type="PackedScene" uid="uid://cx42ibyvbtxdp" path="res://edward.tscn" id="3_55van"]
+[ext_resource type="PackedScene" uid="uid://cfqfn3ru65for" path="res://gameplay.tscn" id="3_s56ga"]
+[ext_resource type="Script" uid="uid://dhgbct263mn0r" path="res://Scripts/FruitLogic/spawner_normal.cpp" id="4_s56ga"]
+[ext_resource type="AudioStream" uid="uid://bxpuy7aeoshah" path="res://songs/Agnes Tachyon Low Cortisol Meme Full Version Lyrics (English Translation).mp3" id="5_h05g5"]
+[ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="7_0jgly"]
+[ext_resource type="Script" uid="uid://ctj8bkxorxswe" path="res://Scripts/GameStates/pause.cpp" id="7_gul82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a75kb"]
+size = Vector2(2419, 92)
+
+[node name="LEVEL1" type="Node2D" unique_id=2130168003]
+process_mode = 1
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1425004397]
+texture = ExtResource("1_a75kb")
+
+[node name="Edward" parent="." unique_id=1056890969 instance=ExtResource("3_55van")]
+position = Vector2(-714, -350)
+script = ExtResource("2_h05g5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2103470257]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=415811661]
+position = Vector2(12, 489)
+shape = SubResource("RectangleShape2D_a75kb")
+
+[node name="Gameplay" parent="." unique_id=1809894304 instance=ExtResource("3_s56ga")]
+position = Vector2(-359, -641)
+script = ExtResource("4_s56ga")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=468602389]
+stream = ExtResource("5_h05g5")
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=811938348]
+follow_viewport_enabled = true
+script = ExtResource("7_gul82")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1985377716]
+offset_left = -952.0
+offset_top = -537.0
+offset_right = 967.0
+offset_bottom = 550.0
+
+[node name="Score" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1539575920]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 67
+text = "Score: "
+
+[node name="Combo" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1331367122]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 67
+text = "Combo: "
+
+[node name="Accuracy" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=857532634]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 67
+text = "Accuracy: "
+
+[node name="PauseMenu" type="Control" parent="CanvasLayer" unique_id=1301729020]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu" unique_id=520384877]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu" unique_id=1084799210]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PAUSED" type="Label" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=639136733]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=224028319]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=1337011761]
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1206216043]

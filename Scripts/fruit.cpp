@@ -63,9 +63,7 @@ void OnProcess(Caller* instance, double _delta)
 	if (!state || state->caught)
 		return;
 
-	//------------------------------------------------
-	// MOVE DOWN
-	//------------------------------------------------
+
 
 	Vector2 pos = state->self->get_position();
 
@@ -73,9 +71,7 @@ void OnProcess(Caller* instance, double _delta)
 
 	state->self->set_position(pos);
 
-	//------------------------------------------------
-	// DELETE IF OFFSCREEN
-	//------------------------------------------------
+
 
 	if (pos.y > 1400.0f)
 	{
@@ -86,18 +82,14 @@ void OnProcess(Caller* instance, double _delta)
 		return;
 	}
 
-	//------------------------------------------------
-	// WAIT FOR PHYSICS
-	//------------------------------------------------
+	
 
 	state->frames++;
 
 	if (state->frames < 5)
 		return;
 
-	//------------------------------------------------
-	// CHECK OVERLAPS
-	//------------------------------------------------
+	
 
 	Array overlaps =
 		state->self->get_overlapping_areas();

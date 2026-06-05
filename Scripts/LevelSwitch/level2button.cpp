@@ -23,15 +23,8 @@ void startwhen_OnButtonPressed_2()
 		UtilityFunctions::print("ERROR: tree is null!");
 		return;
 	}
-	Node* game_state = tree->get_root()->get_node<Node>("GameState");
-	if (!game_state)
-	{
-		UtilityFunctions::print("ERROR: GameState not found at /root/GameState!");
-		return;
-	}
-	game_state->set("selected_level_scene", String("res://LEVEL1.tscn"));
-	UtilityFunctions::print("Level scene set to res://LEVEL1.tscn");
-	tree->change_scene_to_file("res://character_select.tscn");
+	
+	tree->change_scene_to_file("res://LEVEL2.tscn");
 }
 
 void OnAwake(Caller* instance)

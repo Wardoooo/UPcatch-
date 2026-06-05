@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy7y3em7tnlar"
+path="res://.godot/imported/StudioEIM - Crescent Moon Island [Mabinogi Heroes (Vindictus) _ SEASON2].mp3-28c2e4f6d4784aebecdfaba96dfb28c7.mp3str"
+
+[deps]
+
+source_file="res://songs/StudioEIM - Crescent Moon Island [Mabinogi Heroes (Vindictus) _ SEASON2].mp3"
+dest_files=["res://.godot/imported/StudioEIM - Crescent Moon Island [Mabinogi Heroes (Vindictus) _ SEASON2].mp3-28c2e4f6d4784aebecdfaba96dfb28c7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

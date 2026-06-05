@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://becdjdktepj52"]
+
+[ext_resource type="Texture2D" uid="uid://dgoeb1b8xejgw" path="res://Assets/BG/13.png" id="1_6ugku"]
+[ext_resource type="PackedScene" uid="uid://ddhahea25mbvi" path="res://axelreal.tscn" id="2_2f6hp"]
+[ext_resource type="Script" uid="uid://d3f64fl2h2npe" path="res://Scripts/movementboss.cpp" id="3_lpdcx"]
+[ext_resource type="PackedScene" uid="uid://cfqfn3ru65for" path="res://gameplay.tscn" id="4_gymkt"]
+[ext_resource type="AudioStream" uid="uid://dr8hdd1jtuemc" path="res://songs/strta - Ibalik Niyo Si Tatay Digong (NIGHTCORE).mp3" id="5_rfbci"]
+[ext_resource type="Script" uid="uid://ctj8bkxorxswe" path="res://Scripts/GameStates/pause.cpp" id="6_1ndr5"]
+[ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="7_5ba7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a75kb"]
+size = Vector2(2419, 92)
+
+[node name="BOSSLEVEL" type="Node2D" unique_id=2130168003]
+process_mode = 1
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1425004397]
+texture = ExtResource("1_6ugku")
+
+[node name="AxelREAL" parent="." unique_id=1545272807 instance=ExtResource("2_2f6hp")]
+script = ExtResource("3_lpdcx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2103470257]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=415811661]
+position = Vector2(12, 489)
+shape = SubResource("RectangleShape2D_a75kb")
+
+[node name="Gameplay" parent="." unique_id=1809894304 instance=ExtResource("4_gymkt")]
+position = Vector2(-359, -641)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=468602389]
+stream = ExtResource("5_rfbci")
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=811938348]
+follow_viewport_enabled = true
+script = ExtResource("6_1ndr5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1985377716]
+offset_left = -950.0
+offset_top = -537.0
+offset_right = 969.0
+offset_bottom = 550.0
+
+[node name="Score" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1539575920]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 67
+text = "Score: "
+
+[node name="Combo" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1331367122]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 67
+text = "Combo: "
+
+[node name="Accuracy" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=857532634]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 67
+text = "Accuracy: "
+
+[node name="PauseMenu" type="Control" parent="CanvasLayer" unique_id=1301729020]
+visible = false
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu" unique_id=520384877]
+modulate = Color(1, 1, 1, 0.65882355)
+layout_mode = 0
+offset_left = -994.0
+offset_top = -539.0
+offset_right = 975.0
+offset_bottom = 536.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu" unique_id=1084799210]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.0
+offset_right = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PAUSED" type="Label" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=639136733]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 67
+text = "PAUSED!"
+
+[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=224028319]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 40
+text = "RESUME"
+
+[node name="Quit" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=1337011761]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+
+[node name="EndScreen" type="Control" parent="CanvasLayer" unique_id=727981088]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -964.0
+offset_top = -540.0
+offset_right = 956.0
+offset_bottom = 537.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/EndScreen" unique_id=123267683]
+modulate = Color(1, 1, 1, 0.7254902)
+layout_mode = 0
+offset_right = 1973.0
+offset_bottom = 1095.0
+color = Color(0, 0, 0, 1)
+
+[node name="FinalScore" type="Label" parent="CanvasLayer/EndScreen" unique_id=1575830325]
+layout_mode = 0
+offset_top = -221.0
+offset_right = 1926.0
+offset_bottom = 865.0
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 67
+text = "FINAL SCORE: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalAccuracy" type="Label" parent="CanvasLayer/EndScreen" unique_id=99577695]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -112.0
+offset_right = 1924.0
+offset_bottom = 973.0
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 67
+text = "FINAL ACCURACY:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="NameInput" type="LineEdit" parent="CanvasLayer/EndScreen" unique_id=1676936255]
+layout_mode = 0
+offset_left = -36.0
+offset_top = -9.0
+offset_right = 1925.0
+offset_bottom = 1091.0
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 67
+placeholder_text = "Name:"
+alignment = 1
+
+[node name="SubmitButton" type="Button" parent="CanvasLayer/EndScreen" unique_id=735676775]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 619.0
+offset_right = 1102.0
+offset_bottom = 695.0
+theme_override_fonts/font = ExtResource("7_5ba7c")
+theme_override_font_sizes/font_size = 67
+text = "SUBMIT"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1206216043]

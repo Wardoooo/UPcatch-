@@ -6,7 +6,7 @@
 using namespace godot;
 using namespace jenova::sdk;
 
-Button* startwhen_start_button_endless = nullptr;  // unique nam
+Button* GOTOLEVEL4_button_endless = nullptr;  
 
 JENOVA_SCRIPT_BEGIN
 
@@ -17,16 +17,16 @@ void startwhen_OnButtonPressed()
 	);
 	if (tree)
 	{
-		tree->change_scene_to_file("res://endless.tscn");
+		tree->change_scene_to_file("res://LEVEL4.tscn");
 	}
 }
 
 void OnAwake(Caller* instance)
 {
-	startwhen_start_button_endless = GetSelf<Button>(instance);
-	if (startwhen_start_button_endless)
+	GOTOLEVEL4_button_endless = GetSelf<Button>(instance);
+	if (GOTOLEVEL4_button_endless)
 	{
-		startwhen_start_button_endless->connect("pressed", callable_mp_static(&startwhen_OnButtonPressed));
+		GOTOLEVEL4_button_endless->connect("pressed", callable_mp_static(&startwhen_OnButtonPressed));
 	}
 }
 

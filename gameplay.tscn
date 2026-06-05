@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfla32a1ypb1m" path="res://redbull.tscn" id="7_45aep"]
 [ext_resource type="PackedScene" uid="uid://un6q5vly8ak7" path="res://sixseven.tscn" id="8_2ihbs"]
 [ext_resource type="PackedScene" uid="uid://djbb5jckuo75b" path="res://bath.tscn" id="9_1qy1k"]
+[ext_resource type="PackedScene" uid="uid://qqdtvknktdcc" path="res://fruit_matcha.tscn" id="10_1qy1k"]
 
 [node name="Gameplay" type="Node2D" unique_id=1809894304]
 process_mode = 3
@@ -16,33 +17,36 @@ script = ExtResource("1_oe8ih")
 
 [node name="24CHICKEN" parent="." unique_id=1260092324 instance=ExtResource("2_0m7cd")]
 process_mode = 3
-position = Vector2(19, -463)
+position = Vector2(351, -480)
 script = null
 
 [node name="MALUNGGAY" parent="." unique_id=501612277 instance=ExtResource("4_2ihbs")]
-position = Vector2(2, -490)
+position = Vector2(334, -452)
 script = null
 
 [node name="VSCODE" parent="." unique_id=1595486258 instance=ExtResource("5_1qy1k")]
-position = Vector2(31, -499)
+position = Vector2(312, -507)
 script = null
 
 [node name="UPLOGO" parent="." unique_id=812297017 instance=ExtResource("6_3n40r")]
-position = Vector2(17, -471)
+position = Vector2(329, -482)
 script = null
 
 [node name="REDBULL" parent="." unique_id=188706530 instance=ExtResource("7_45aep")]
-position = Vector2(16, -454)
+position = Vector2(318, -468)
 script = null
 
 [node name="LUCKYDAY" parent="." unique_id=668199751 instance=ExtResource("2_xuee5")]
-position = Vector2(8, -479)
+position = Vector2(320, -456)
 script = null
 
 [node name="67" parent="." unique_id=238589231 instance=ExtResource("8_2ihbs")]
-position = Vector2(23, -466)
+position = Vector2(316, -447)
 script = null
 
 [node name="BATH" parent="." unique_id=1733518228 instance=ExtResource("9_1qy1k")]
-position = Vector2(-321, -587)
+position = Vector2(57, -605)
 script = null
+
+[node name="Matcha" parent="." unique_id=1757722368 instance=ExtResource("10_1qy1k")]
+position = Vector2(325, -462)

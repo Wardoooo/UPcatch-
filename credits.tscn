@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b8vdumbk4gl5s"]
+
+[ext_resource type="Texture2D" uid="uid://uud8dp1lmsgn" path="res://Assets/Sprites/BLACK.png" id="1_nm7lk"]
+[ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="2_c1t8d"]
+[ext_resource type="Script" uid="uid://dol3wn7mppl67" path="res://RETURN.cpp" id="3_g4wvt"]
+
+[node name="credits" type="Node2D" unique_id=953559779]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1395363917]
+position = Vector2(-4, 13)
+scale = Vector2(6.5500007, 6.5684533)
+texture = ExtResource("1_nm7lk")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1695097678]
+
+[node name="Label" type="Label" parent="." unique_id=687980042]
+offset_left = -943.0
+offset_top = -460.0
+offset_right = 984.0
+offset_bottom = 599.0
+theme_override_fonts/font = ExtResource("2_c1t8d")
+theme_override_font_sizes/font_size = 41
+text = "CREDITS:
+YENA (최예나) - 캐치 캐치 (Catch Catch) MV
+StudioEIM - Crescent Moon Island [Mabinogi Heroes (Vindictus) : SEASON2]
+NewJeans (뉴진스) 'Ditto' 
+NIKI - La La Lost You
+TIA - Ai Đưa Em Về | Official M/V | Ft. Lê Thiện Hiếu
+Craftpix - FreeSkyBackgrounds
+Strta-Ibalik niyo si tatay digong nightcore
+Twice - What is Love MV
+Microsoft - VSCODE LOGO
+Redbull - REDBULL LOGO
+https://pngtree.com/so/iced-matcha
+24 CHICKEN - 24 CHICKEN LOGO
+KOPIKO - LUCKY DAY LOGO
+UNIVERSITY OF THE PHILIPPINES - LOGO
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RETURN" type="Button" parent="." unique_id=840362059]
+offset_left = -326.0
+offset_top = 403.0
+offset_right = 298.0
+offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("2_c1t8d")
+theme_override_font_sizes/font_size = 67
+text = "RETURN"
+script = ExtResource("3_g4wvt")

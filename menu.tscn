@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://bn64p6pai50b0"]
 
 [ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="1_lti8b"]
-[ext_resource type="Texture2D" uid="uid://b3ba13uekeuee" path="res://BG/2.png" id="1_mae5d"]
+[ext_resource type="Texture2D" uid="uid://b3ba13uekeuee" path="res://Assets/BG/2.png" id="1_mae5d"]
 [ext_resource type="Script" uid="uid://cxadmbuc20bdd" path="res://Scripts/startwhenpressed.cpp" id="3_mae5d"]
+[ext_resource type="Script" uid="uid://ddqeg3mrnm0vb" path="res://quit.cpp" id="4_4hy44"]
+[ext_resource type="Script" uid="uid://horlu6fwbhg3" path="res://leaderboard.cpp" id="4_l48gv"]
+[ext_resource type="Script" uid="uid://dw83ce626w75u" path="res://credits.cpp" id="5_ytr4m"]
+[ext_resource type="Script" uid="uid://dcjgoosxpy1kn" path="res://tutorial.cpp" id="7_ecwwl"]
+[ext_resource type="AudioStream" uid="uid://skmlo1gmhugp" path="res://songs/YENA (Catch Catch) MV.mp3" id="8_nrnbx"]
+[ext_resource type="Script" uid="uid://bm03ftun8hmtv" path="res://audio_stream_player_2d.cpp" id="9_iqepy"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4hy44"]
 
@@ -23,12 +29,12 @@ texture = ExtResource("1_mae5d")
 [node name="Title" type="Label" parent="MainMenu" unique_id=652585667]
 layout_mode = 0
 offset_left = 52.0
-offset_top = 199.0
-offset_right = 669.0
-offset_bottom = 270.0
+offset_top = 61.0
+offset_right = 688.0
+offset_bottom = 185.0
 theme_override_fonts/font = ExtResource("1_lti8b")
-theme_override_font_sizes/font_size = 70
-text = "UPcatch Mania!"
+theme_override_font_sizes/font_size = 124
+text = "UPcatch!"
 horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="MainMenu" unique_id=1978421363]
@@ -39,45 +45,64 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 48.0
-offset_top = 339.0
-offset_right = 425.0
-offset_bottom = 462.0
+offset_top = 205.0
+offset_right = 548.0
+offset_bottom = 328.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_lti8b")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 67
 text = "START"
 script = ExtResource("3_mae5d")
 
+[node name="Leaderboard" type="Button" parent="MainMenu" unique_id=887829200]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 514.0
+offset_right = 588.0
+offset_bottom = 637.0
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 58
+text = "LEADERBOARD"
+script = ExtResource("4_l48gv")
+
 [node name="Quit" type="Button" parent="MainMenu" unique_id=1936063375]
 layout_mode = 0
-offset_left = 126.0
-offset_top = 690.0
-offset_right = 406.0
-offset_bottom = 756.0
+offset_left = 88.0
+offset_top = 793.0
+offset_right = 588.0
+offset_bottom = 916.0
 theme_override_fonts/font = ExtResource("1_lti8b")
-theme_override_font_sizes/font_size = 51
+theme_override_font_sizes/font_size = 67
 text = "QUIT"
+script = ExtResource("4_4hy44")
 
-[node name="Settings" type="Button" parent="MainMenu" unique_id=1981788910]
+[node name="Credits" type="Button" parent="MainMenu" unique_id=1627592412]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 588.0
-offset_right = 406.0
-offset_bottom = 665.1428
+offset_left = 88.0
+offset_top = 369.0
+offset_right = 588.0
+offset_bottom = 492.0
 theme_override_fonts/font = ExtResource("1_lti8b")
-theme_override_font_sizes/font_size = 42
-text = "SETTINGS"
+theme_override_font_sizes/font_size = 67
+text = "CREDITS"
+script = ExtResource("5_ytr4m")
 
-[node name="Leaderboard" type="Button" parent="MainMenu" unique_id=1627592412]
+[node name="Tutorial" type="Button" parent="MainMenu" unique_id=805161963]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 508.0
-offset_right = 408.0
-offset_bottom = 574.73596
+offset_left = 88.0
+offset_top = 652.0
+offset_right = 588.0
+offset_bottom = 775.0
 theme_override_fonts/font = ExtResource("1_lti8b")
-theme_override_font_sizes/font_size = 30
-text = "LEADERBOARD"
+theme_override_font_sizes/font_size = 67
+text = "TUTORIAL"
+script = ExtResource("7_ecwwl")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1220970470]
 occluder = SubResource("OccluderPolygon2D_4hy44")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=820687882]
+stream = ExtResource("8_nrnbx")
+autoplay = true
+script = ExtResource("9_iqepy")

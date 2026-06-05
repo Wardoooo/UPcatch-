@@ -1,37 +1,34 @@
-/* Jenova C++ Node Base Script (Meteora) */
 #include <Godot/godot.hpp>
-#include <Godot/classes/video_stream_player.hpp>
+#include <Godot/classes/button.hpp>
 #include <Godot/classes/scene_tree.hpp>
+#include <Godot/classes/engine.hpp>
+
 using namespace godot;
 using namespace jenova::sdk;
 
-static VideoStreamPlayer* self = nullptr;
-static bool changed_scene = false;
+Button* TREN = nullptr;
 
 JENOVA_SCRIPT_BEGIN
 
 void OnAwake(Caller* instance)
 {
-	self = GetSelf<VideoStreamPlayer>(instance);
-	changed_scene = false;
+	TREN = GetSelf<Button>(instance);
 }
-void OnDestroy(Caller* instance)
+
+void OnProcess(Caller* instance, double _delta)
 {
-	self = nullptr;
-}
-void OnReady(Caller* instance)
-{
-	if (self)
-		self->play();
-}
-void OnProcess(Caller* instance, double delta)
-{
-	if (!self || changed_scene)
-		return;
-	if (self->get_stream_position() >= 74.0)
+	if (!TREN) return;
+
+	if (TREN->is_pressed())
 	{
-		changed_scene = true;
-		self->get_tree()->change_scene_to_file("res://menu.tscn");
+		SceneTree* tree = Object::cast_to<SceneTree>(
+			Engine::get_singleton()->get_main_loop()
+		);
+		if (tree)
+		{
+			TREN = nullptr;
+			tree->change_scene_to_file("res://TUTORIAL.tscn");
+		}
 	}
 }
 

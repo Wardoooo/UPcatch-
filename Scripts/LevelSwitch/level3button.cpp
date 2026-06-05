@@ -6,7 +6,7 @@
 using namespace godot;
 using namespace jenova::sdk;
 
-Button* startwhen_start_button_3 = nullptr;  // unique nam
+Button* startwhen_start_button_3 = nullptr;  
 
 JENOVA_SCRIPT_BEGIN
 
@@ -17,7 +17,7 @@ void startwhen_OnButtonPressed()
 	);
 	if (tree)
 	{
-		tree->change_scene_to_file("res://level3.tscn");
+		tree->change_scene_to_file("res://LEVEL3.tscn");
 	}
 }
 

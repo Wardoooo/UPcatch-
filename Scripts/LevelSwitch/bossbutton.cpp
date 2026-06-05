@@ -6,7 +6,7 @@
 using namespace godot;
 using namespace jenova::sdk;
 
-Button* startwhen_start_button_boss = nullptr;  // unique nam
+Button* BOSSBUTUN = nullptr;  
 
 JENOVA_SCRIPT_BEGIN
 
@@ -17,16 +17,17 @@ void startwhen_OnButtonPressed()
 	);
 	if (tree)
 	{
-		tree->change_scene_to_file("res://bosslvl.tscn");
+		tree->change_scene_to_file("res://bosslevel.tscn");
+		//REDIRECT SA BOSSLEVEL SCENE
 	}
 }
 
 void OnAwake(Caller* instance)
 {
-	startwhen_start_button_boss = GetSelf<Button>(instance);
-	if (startwhen_start_button_boss)
+	BOSSBUTUN = GetSelf<Button>(instance);
+	if (BOSSBUTUN)
 	{
-		startwhen_start_button_boss->connect("pressed", callable_mp_static(&startwhen_OnButtonPressed));
+		BOSSBUTUN->connect("pressed", callable_mp_static(&startwhen_OnButtonPressed));
 	}
 }
 

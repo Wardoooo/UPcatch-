@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bdmlkrnhsi4ek"]
 
 [ext_resource type="VideoStream" uid="uid://cli62slw5ttwm" path="res://songs/TUTORIALLLL.ogv" id="1_286tt"]
-[ext_resource type="Script" uid="uid://cql2skk0b43go" path="res://TUTORIAL.cpp" id="2_8g7wj"]
+[ext_resource type="Script" uid="uid://ccgclq0ucvjge" path="res://TUTORIALTOMENU.cpp" id="2_8g7wj"]
 
-[node name="Node2D" type="Node2D" unique_id=1456200723]
+[node name="TUTORIALVID" type="Node2D" unique_id=1456200723]
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=191355872]
 offset_left = -957.0

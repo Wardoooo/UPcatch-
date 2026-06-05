@@ -2,6 +2,7 @@
 #include <Godot/godot.hpp>
 #include <Godot/classes/video_stream_player.hpp>
 #include <Godot/classes/scene_tree.hpp>
+
 using namespace godot;
 using namespace jenova::sdk;
 
@@ -15,20 +16,24 @@ void OnAwake(Caller* instance)
 	self = GetSelf<VideoStreamPlayer>(instance);
 	changed_scene = false;
 }
+
 void OnDestroy(Caller* instance)
 {
 	self = nullptr;
 }
+
 void OnReady(Caller* instance)
 {
 	if (self)
 		self->play();
 }
+
 void OnProcess(Caller* instance, double delta)
 {
 	if (!self || changed_scene)
 		return;
-	if (self->get_stream_position() >= 19.0)
+
+	if (!self->is_playing())
 	{
 		changed_scene = true;
 		self->get_tree()->change_scene_to_file("res://menu.tscn");

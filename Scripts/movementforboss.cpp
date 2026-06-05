@@ -63,10 +63,10 @@ void OnPhysicsProcess(Caller* instance, double _delta)
 	}
 	space_was_pressed = space_pressed;
 
-	// tick dash window timer
+	
 	dash_timer += (float)_delta;
 
-	// decay dash speed back to 0 over time
+
 	if (current_dash_speed > 0.0f)
 	{
 		current_dash_speed -= dash_decay_rate * (float)_delta;
@@ -74,11 +74,11 @@ void OnPhysicsProcess(Caller* instance, double _delta)
 			current_dash_speed = 0.0f;
 	}
 
-	// reset press count if window expired
+	
 	if (dash_timer > dash_window)
 		dash_press_count = 0;
 
-	// movement
+	
 	float direction = 0.0f;
 	if (input->is_action_pressed("ui_left"))  direction -= 1.0f;
 	if (input->is_action_pressed("ui_right")) direction += 1.0f;
@@ -91,7 +91,7 @@ void OnPhysicsProcess(Caller* instance, double _delta)
 	self->set_velocity(velocity);
 	self->move_and_slide();
 
-	// screen warp
+
 	Vector2 pos = self->get_position();
 	if (pos.x > warp_right_edge) pos.x = warp_left_edge  + 5.0f;
 	if (pos.x < warp_left_edge)  pos.x = warp_right_edge - 5.0f;

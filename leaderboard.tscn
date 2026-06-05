@@ -1,3 +1,79 @@
-[gd_scene format=3 uid="uid://b8vdumbk4gl5s"]
+[gd_scene format=3 uid="uid://bfgoxoygk748y"]
 
-[node name="leaderboard" type="Node2D" unique_id=953559779]
+[ext_resource type="Script" uid="uid://ckq5wuchha4se" path="res://leaderboardmanager.cpp" id="1_3ilyb"]
+[ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="2_2t7te"]
+[ext_resource type="Texture2D" uid="uid://dl1jc8aqyl3vv" path="res://Assets/BG/lw.png" id="2_oli24"]
+[ext_resource type="Script" uid="uid://dol3wn7mppl67" path="res://RETURN.cpp" id="4_y1kwj"]
+
+[node name="leaderboard" type="Node" unique_id=643594383]
+script = ExtResource("1_3ilyb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1965221577]
+position = Vector2(1012, 494)
+texture = ExtResource("2_oli24")
+
+[node name="LeaderboardColumns" type="HBoxContainer" parent="." unique_id=690953244]
+modulate = Color(0.009317499, 0.009317501, 0.009317499, 1)
+offset_right = 1906.0
+offset_bottom = 1077.0
+alignment = 1
+
+[node name="Level1Col" type="VBoxContainer" parent="LeaderboardColumns" unique_id=1180570155]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LeaderboardColumns/Level1Col" unique_id=573838106]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2t7te")
+theme_override_font_sizes/font_size = 67
+text = "LEVEL 1   "
+
+[node name="Level2Col" type="VBoxContainer" parent="LeaderboardColumns" unique_id=2019448920]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LeaderboardColumns/Level2Col" unique_id=1067903537]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2t7te")
+theme_override_font_sizes/font_size = 67
+text = "LEVEL 2   "
+
+[node name="Level3Col" type="VBoxContainer" parent="LeaderboardColumns" unique_id=2120664651]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LeaderboardColumns/Level3Col" unique_id=109387791]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2t7te")
+theme_override_font_sizes/font_size = 67
+text = "LEVEL 3   "
+
+[node name="Level4Col" type="VBoxContainer" parent="LeaderboardColumns" unique_id=806580767]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LeaderboardColumns/Level4Col" unique_id=190827304]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2t7te")
+theme_override_font_sizes/font_size = 67
+text = "LEVEL 4   "
+
+[node name="Level5Col" type="VBoxContainer" parent="LeaderboardColumns" unique_id=785611362]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LeaderboardColumns/Level5Col" unique_id=370942493]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2t7te")
+theme_override_font_sizes/font_size = 67
+text = "BOSS LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="LeaderboardColumns" unique_id=94246686]
+layout_mode = 2
+
+[node name="RETURN" type="Button" parent="." unique_id=1387804339]
+offset_left = 640.0
+offset_top = 877.0
+offset_right = 1151.0
+offset_bottom = 953.0
+theme_override_fonts/font = ExtResource("2_2t7te")
+theme_override_font_sizes/font_size = 67
+text = "RETURN"
+script = ExtResource("4_y1kwj")

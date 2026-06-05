@@ -26,7 +26,7 @@ void OnProcess(Caller* instance, double _delta)
 		);
 		if (tree)
 		{
-			start_button = nullptr; // prevent double trigger
+			start_button = nullptr; 
 			tree->change_scene_to_file("res://levelselection.tscn");
 		}
 	}

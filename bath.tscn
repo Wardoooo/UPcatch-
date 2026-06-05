@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djbb5jckuo75b"]
 
 [ext_resource type="Script" uid="uid://cjqo1bnqeb4hj" path="res://Scripts/FruitLogic/connection.gd" id="1_yspw4"]
-[ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Textures/POTAAAAAANGERNAAAA1.png" id="2_t6mht"]
+[ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Sprites/spritetexture.png" id="2_t6mht"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qevb"]
 radius = 69.02898

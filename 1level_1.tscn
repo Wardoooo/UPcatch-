@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://q4wuqjj0t0qk"]
 
-[ext_resource type="Texture2D" uid="uid://dyokmgbww8dfj" path="res://BG/orig_big.png" id="1_hbghi"]
+[ext_resource type="Texture2D" uid="uid://dyokmgbww8dfj" path="res://Assets/BG/orig_big.png" id="1_hbghi"]
 [ext_resource type="PackedScene" uid="uid://cfqfn3ru65for" path="res://gameplay.tscn" id="1_lbikw"]
-[ext_resource type="Script" uid="uid://b5i4nq15piope" path="res://Scripts/CharacterSelection/characterloader.cpp" id="2_i8cwj"]
+[ext_resource type="PackedScene" uid="uid://b6mf4ub7m6cgh" path="res://neiljanreal.tscn" id="2_lbikw"]
+[ext_resource type="Script" uid="uid://cl076w24bsimi" path="res://Scripts/movementforboss.cpp" id="3_dvnhh"]
 [ext_resource type="AudioStream" uid="uid://dr8hdd1jtuemc" path="res://songs/strta - Ibalik Niyo Si Tatay Digong (NIGHTCORE).mp3" id="5_lbikw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
@@ -17,8 +18,8 @@ texture = ExtResource("1_hbghi")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1385530575]
 
-[node name="PlayerSpawner" type="Node2D" parent="." unique_id=795549956]
-script = ExtResource("2_i8cwj")
+[node name="Neiljanreal" parent="." unique_id=606960119 instance=ExtResource("2_lbikw")]
+script = ExtResource("3_dvnhh")
 
 [node name="DangerFruits" type="Node2D" parent="." unique_id=374544171]
 
@@ -27,7 +28,7 @@ stream = ExtResource("5_lbikw")
 volume_db = 24.0
 autoplay = true
 
-[node name="Gameplay" parent="." unique_id=1809894304 groups=["fruit_spawner"] instance=ExtResource("1_lbikw")]
+[node name="Gameplay" parent="." unique_id=1809894304 instance=ExtResource("1_lbikw")]
 position = Vector2(111.00001, -592)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=525946216]

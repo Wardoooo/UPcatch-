@@ -1,5 +1,5 @@
 /* Jenova C++ Node Base Script (Meteora) */
-/* Attach this to: CanvasLayer */
+
 #include <Godot/godot.hpp>
 #include <Godot/classes/node.hpp>
 #include <Godot/classes/canvas_layer.hpp>
@@ -8,7 +8,6 @@
 #include <Godot/classes/input.hpp>
 #include <Godot/classes/scene_tree.hpp>
 #include <Godot/variant/utility_functions.hpp>
-
 using namespace godot;
 using namespace jenova::sdk;
 
@@ -24,8 +23,6 @@ JENOVA_SCRIPT_BEGIN
 void OnAwake(Caller* instance)
 {
 	pm_self = GetSelf<CanvasLayer>(instance);
-
-	// Only THIS node is ALWAYS — everything else stays Pausable
 	pm_self->set_process_mode(Node::PROCESS_MODE_ALWAYS);
 	pm_self->set_process(true);
 }
@@ -38,8 +35,6 @@ void OnReady(Caller* instance)
 		UtilityFunctions::print("[PauseMenu] ERROR: PauseMenu not found under CanvasLayer!");
 		return;
 	}
-
-	// PauseMenu and buttons must also be ALWAYS to stay interactive while paused
 	pm_pause_menu->set_process_mode(Node::PROCESS_MODE_ALWAYS);
 	pm_pause_menu->set_visible(false);
 
@@ -76,18 +71,15 @@ void OnProcess(Caller* instance, double _delta)
 	if (!input) return;
 
 	bool esc_down = input->is_key_pressed(KEY_ESCAPE);
-
 	if (esc_down && !pm_esc_held)
 	{
 		pm_esc_held = true;
-
 		SceneTree* tree = pm_self->get_tree();
 		if (!tree) return;
 
 		bool paused = tree->is_paused();
 		tree->set_pause(!paused);
 		pm_pause_menu->set_visible(!paused);
-
 		UtilityFunctions::print(!paused ? "[PauseMenu] PAUSED." : "[PauseMenu] RESUMED.");
 	}
 	else if (!esc_down)
@@ -114,7 +106,7 @@ void OnQuitPressed(Caller* instance)
 	if (!tree) return;
 
 	tree->set_pause(false);
-	tree->quit();
+	tree->change_scene_to_file("res://menu.tscn");
 }
 
 JENOVA_SCRIPT_END

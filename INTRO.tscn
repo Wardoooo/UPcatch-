@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dhv34wuva4ve" path="res://INTRO.cpp" id="2_db5k1"]
 
 [node name="Node2D" type="Node2D" unique_id=1944309297]
+position = Vector2(-1, 0)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=956499601]
 texture_filter = 2

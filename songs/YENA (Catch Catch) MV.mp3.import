@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://skmlo1gmhugp"
+path="res://.godot/imported/YENA (Catch Catch) MV.mp3-84f4af6aeed30cc3fae6b172bf45368e.mp3str"
+
+[deps]
+
+source_file="res://songs/YENA (Catch Catch) MV.mp3"
+dest_files=["res://.godot/imported/YENA (Catch Catch) MV.mp3-84f4af6aeed30cc3fae6b172bf45368e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

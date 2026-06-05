@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://blmpnuvn6lctt"]
 
-[ext_resource type="Texture2D" uid="uid://b3ba13uekeuee" path="res://BG/2.png" id="1_jg0dc"]
+[ext_resource type="Texture2D" uid="uid://b3ba13uekeuee" path="res://Assets/BG/2.png" id="1_jg0dc"]
 
 [node name="level_2" type="Node2D" unique_id=2005041411]
 

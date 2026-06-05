@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://un6q5vly8ak7"]
 
-[ext_resource type="Texture2D" uid="uid://cosh3vnfxj8g0" path="res://Assets/Textures/POTAAAAAANGERNAAAA2.png" id="1_bj6te"]
+[ext_resource type="Texture2D" uid="uid://cosh3vnfxj8g0" path="res://Assets/Sprites/spritetexture2.png" id="1_bj6te"]
 [ext_resource type="Script" uid="uid://cjqo1bnqeb4hj" path="res://Scripts/FruitLogic/connection.gd" id="1_mchps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4il46"]

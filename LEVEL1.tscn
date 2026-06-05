@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d14um44rrqgrk"]
 
-[ext_resource type="Texture2D" uid="uid://cwv5tby7lp8n7" path="res://BG/14.png" id="1_a75kb"]
+[ext_resource type="Texture2D" uid="uid://cwv5tby7lp8n7" path="res://Assets/BG/14.png" id="1_a75kb"]
 [ext_resource type="Script" uid="uid://rsiwgxghpq6" path="res://Scripts/movement.cpp" id="2_h05g5"]
 [ext_resource type="PackedScene" uid="uid://cx42ibyvbtxdp" path="res://edward.tscn" id="3_55van"]
 [ext_resource type="PackedScene" uid="uid://cfqfn3ru65for" path="res://gameplay.tscn" id="3_s56ga"]
@@ -67,27 +67,110 @@ text = "Accuracy: "
 [node name="PauseMenu" type="Control" parent="CanvasLayer" unique_id=1301729020]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu" unique_id=520384877]
+modulate = Color(1, 1, 1, 0.65882355)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -963.0
+offset_top = -543.0
+offset_right = 973.0
+offset_bottom = 532.0
+color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu" unique_id=1084799210]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.0
+offset_right = 157.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PAUSED" type="Label" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=639136733]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 67
+text = "PAUSED!"
 
 [node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=224028319]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 40
+text = "RESUME"
 
 [node name="Quit" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=1337011761]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+
+[node name="EndScreen" type="Control" parent="CanvasLayer" unique_id=966331330]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -964.0
+offset_top = -540.0
+offset_right = 956.0
+offset_bottom = 537.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/EndScreen" unique_id=1760848747]
+modulate = Color(1, 1, 1, 0.7254902)
+layout_mode = 0
+offset_left = -81.0
+offset_right = 1973.0
+offset_bottom = 1095.0
+color = Color(0, 0, 0, 1)
+
+[node name="FinalScore" type="Label" parent="CanvasLayer/EndScreen" unique_id=58584754]
+layout_mode = 0
+offset_top = -221.0
+offset_right = 1926.0
+offset_bottom = 865.0
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 67
+text = "FINAL SCORE: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalAccuracy" type="Label" parent="CanvasLayer/EndScreen" unique_id=2003965674]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -112.0
+offset_right = 1924.0
+offset_bottom = 973.0
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 67
+text = "FINAL ACCURACY:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="NameInput" type="LineEdit" parent="CanvasLayer/EndScreen" unique_id=1621803639]
+layout_mode = 0
+offset_left = -36.0
+offset_top = -9.0
+offset_right = 1925.0
+offset_bottom = 1091.0
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 67
+placeholder_text = "Name:"
+alignment = 1
+
+[node name="SubmitButton" type="Button" parent="CanvasLayer/EndScreen" unique_id=557451013]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 619.0
+offset_right = 1102.0
+offset_bottom = 695.0
+theme_override_fonts/font = ExtResource("7_0jgly")
+theme_override_font_sizes/font_size = 67
+text = "SUBMIT"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1206216043]

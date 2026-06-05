@@ -3,14 +3,13 @@
 [ext_resource type="Script" uid="uid://cjqo1bnqeb4hj" path="res://Scripts/FruitLogic/connection.gd" id="1_81ml0"]
 [ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Sprites/spritetexture.png" id="2_niblj"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i07pa"]
-radius = 34.0
-height = 136.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_t45jj"]
+radius = 64.00781
 
-[node name="Area2D" type="Area2D" unique_id=501612277]
+[node name="Area2D" type="Area2D" unique_id=1260092324]
 script = ExtResource("1_81ml0")
 
-[node name="FruitSprite" type="Sprite2D" parent="." unique_id=1893895147]
+[node name="FruitSprite" type="Sprite2D" parent="." unique_id=172782958]
 position = Vector2(510.75, 336.75)
 scale = Vector2(3.3906243, 3.3906243)
 texture = ExtResource("2_niblj")
@@ -18,7 +17,6 @@ region_enabled = true
 region_rect = Rect2(144, 32, 24, 48)
 region_filter_clip_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1834781972]
-position = Vector2(512, 336)
-shape = SubResource("CapsuleShape2D_i07pa")
-debug_color = Color(0.65457684, 0.5179122, 0, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=95206143]
+position = Vector2(512, 344)
+shape = SubResource("CircleShape2D_t45jj")

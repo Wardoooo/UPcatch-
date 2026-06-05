@@ -82,7 +82,7 @@ FourthSceneFruit FourthScene_active[256]  = {};
 int      FourthScene_active_count = 0;
 
 const float FourthScene_left_bound  = -1000.0f;
-const float FourthScene_right_bound =   100.0f;
+const float FourthScene_right_bound =   450.0f;
 const float FourthScene_top_spawn   =  -300.0f;
 const float FourthScene_bottom_kill =   691.0f;
 

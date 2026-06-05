@@ -79,6 +79,7 @@ const char* FirstScene_fruit_paths[] = {
 	"res://fruit_matcha.tscn",
 	"res://bath.tscn",
 	"res://sixseven.tscn"
+	
 };
 const int FirstScene_fruit_path_count = sizeof(FirstScene_fruit_paths) / sizeof(FirstScene_fruit_paths[0]);
 
@@ -88,7 +89,7 @@ Node2D* FirstScene_active[256];
 bool    FirstScene_pending_free[256]; 
 int     FirstScene_active_count = 0;
 
-const float FirstScene_left_bound  = -1000.0f;
+const float FirstScene_left_bound  = -500.0f;
 const float FirstScene_right_bound =   100.0f;
 const float FirstScene_top_spawn   =  -300.0f;
 const float FirstScene_bottom_kill =   691.0f;

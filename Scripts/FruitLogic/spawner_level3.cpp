@@ -82,7 +82,7 @@ ThirdSceneFruit ThirdScene_active[256]  = {};
 int      ThirdScene_active_count = 0;
 
 const float ThirdScene_left_bound  = -1000.0f;
-const float ThirdScene_right_bound =   100.0f;
+const float ThirdScene_right_bound =   450.0f;
 const float ThirdScene_top_spawn   =  -300.0f;
 const float ThirdScene_bottom_kill =   691.0f;
 

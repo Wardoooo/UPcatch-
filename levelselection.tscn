@@ -7,7 +7,8 @@
 [ext_resource type="Script" uid="uid://cciv2foow8ng8" path="res://Scripts/LevelSwitch/level2button.cpp" id="1_p4dlm"]
 [ext_resource type="Script" uid="uid://ca3ksref3533h" path="res://Scripts/LevelSwitch/endlessbutton.cpp" id="1_q2imn"]
 [ext_resource type="Texture2D" uid="uid://c6csbtdr205kh" path="res://Assets/BG/orig_big1.png" id="1_qh4vu"]
-[ext_resource type="Script" uid="uid://vfb5tjriunw0" path="res://endlessbutton.cpp" id="7_1ytgv"]
+[ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="2_3acge"]
+[ext_resource type="Script" uid="uid://dol3wn7mppl67" path="res://RETURN.cpp" id="8_outnm"]
 
 [node name="Node2D" type="Node2D" unique_id=166106774]
 
@@ -22,60 +23,71 @@ offset_bottom = 40.0
 
 [node name="Boss" type="Button" parent="Level Selection" unique_id=1233129707]
 layout_mode = 0
-offset_left = 147.0
-offset_top = -346.0
-offset_right = 621.0
-offset_bottom = -159.0
-text = "Boss"
+offset_left = 83.0
+offset_top = -258.0
+offset_right = 811.0
+offset_bottom = -71.0
+theme_override_fonts/font = ExtResource("2_3acge")
+theme_override_font_sizes/font_size = 167
+text = "BOSS!!!"
 script = ExtResource("1_mvrvb")
 
 [node name="Level4" type="Button" parent="Level Selection" unique_id=43719857]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 28.0
-offset_right = 734.0
-offset_bottom = 172.0
-text = "Endless"
+offset_left = -851.0
+offset_top = 158.0
+offset_right = -181.0
+offset_bottom = 302.0
+theme_override_fonts/font = ExtResource("2_3acge")
+theme_override_font_sizes/font_size = 67
+text = "Level 4"
 script = ExtResource("1_q2imn")
 
 [node name="Level3" type="Button" parent="Level Selection" unique_id=2016745552]
 layout_mode = 0
-offset_left = -804.0
-offset_top = 34.0
-offset_right = -365.0
-offset_bottom = 176.0
+offset_left = -851.0
+offset_top = -35.0
+offset_right = -181.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("2_3acge")
+theme_override_font_sizes/font_size = 67
 text = "Level 3
 "
 script = ExtResource("1_nx5iw")
 
 [node name="Level2" type="Button" parent="Level Selection" unique_id=1111554657]
 layout_mode = 0
-offset_left = -838.0
+offset_left = -851.0
 offset_top = -232.0
-offset_right = -332.0
-offset_bottom = -115.0
+offset_right = -181.0
+offset_bottom = -88.0
+theme_override_fonts/font = ExtResource("2_3acge")
+theme_override_font_sizes/font_size = 67
 text = "Level 2
 "
 script = ExtResource("1_p4dlm")
 
 [node name="Level1" type="Button" parent="Level Selection" unique_id=1091237115]
 layout_mode = 0
-offset_left = -857.0
+offset_left = -851.0
 offset_top = -438.0
-offset_right = -333.0
-offset_bottom = -334.0
+offset_right = -181.0
+offset_bottom = -294.0
+theme_override_fonts/font = ExtResource("2_3acge")
+theme_override_font_sizes/font_size = 67
 text = "Level 1"
 script = ExtResource("1_4v0y6")
 
-[node name="ENDLESS" type="Button" parent="Level Selection" unique_id=1116771897]
+[node name="RETURN" type="Button" parent="Level Selection" unique_id=234875643]
 layout_mode = 0
-offset_left = 185.0
-offset_top = -120.0
-offset_right = 564.0
-offset_bottom = -6.0
-text = "ENDLESS
-"
-script = ExtResource("7_1ytgv")
+offset_left = 136.0
+offset_top = 61.0
+offset_right = 760.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("2_3acge")
+theme_override_font_sizes/font_size = 67
+text = "RETURN"
+script = ExtResource("8_outnm")
 
 [node name="Notes" parent="." unique_id=806682114 instance=ExtResource("1_js3ie")]
 

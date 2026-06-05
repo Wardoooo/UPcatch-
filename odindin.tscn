@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://syvyibsvdm8u"]
+
+[ext_resource type="Script" uid="uid://cjqo1bnqeb4hj" path="res://Scripts/FruitLogic/connection.gd" id="1_ukfis"]
+[ext_resource type="Texture2D" uid="uid://cosh3vnfxj8g0" path="res://Assets/Sprites/spritetexture2.png" id="2_e8qdq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ufsk"]
+radius = 60.41523
+
+[node name="odindin" type="Area2D" unique_id=338205020]
+position = Vector2(439, 329)
+script = ExtResource("1_ukfis")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=748800996]
+position = Vector2(4, -3.8146973e-06)
+scale = Vector2(3.625, 3.125)
+texture = ExtResource("2_e8qdq")
+region_enabled = true
+region_rect = Rect2(160, 152, 48, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=825028111]
+shape = SubResource("CircleShape2D_3ufsk")
+debug_color = Color(0.56896913, 0.55180377, 0.21452826, 0.41960785)

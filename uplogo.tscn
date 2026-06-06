@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crgdixkkmdfim"]
 
 [ext_resource type="Script" uid="uid://cjqo1bnqeb4hj" path="res://Scripts/FruitLogic/connection.gd" id="1_3ihag"]
-[ext_resource type="Texture2D" uid="uid://c0fb4iemctau4" path="res://Assets/Sprites/spritetexture.png" id="2_3sdbw"]
+[ext_resource type="Texture2D" uid="uid://gkm4orb31pq0" path="res://Assets/Sprites/UP-Seal.png" id="2_3ihag"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ihag"]
 radius = 89.106674
@@ -11,11 +11,11 @@ z_index = 10
 script = ExtResource("1_3ihag")
 
 [node name="FruitSprite" type="Sprite2D" parent="." unique_id=1893895147]
-position = Vector2(514.90625, 345.40628)
-scale = Vector2(3.539063, 3.699777)
-texture = ExtResource("2_3sdbw")
+position = Vector2(516.5, 341)
+scale = Vector2(0.12220983, 0.11956521)
+texture = ExtResource("2_3ihag")
 region_enabled = true
-region_rect = Rect2(360, 32, 56, 56)
+region_rect = Rect2(24, 0, 1792, 1656)
 region_filter_clip_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1834781972]

@@ -2,6 +2,7 @@
 
 [ext_resource type="VideoStream" uid="uid://cli62slw5ttwm" path="res://songs/TUTORIALLLL.ogv" id="1_286tt"]
 [ext_resource type="Script" uid="uid://ccgclq0ucvjge" path="res://TUTORIALTOMENU.cpp" id="2_8g7wj"]
+[ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="3_o5hvj"]
 
 [node name="TUTORIALVID" type="Node2D" unique_id=1456200723]
 
@@ -15,3 +16,12 @@ autoplay = true
 script = ExtResource("2_8g7wj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=278870299]
+
+[node name="Label" type="Label" parent="." unique_id=1520210003]
+offset_left = -915.0
+offset_top = 415.0
+offset_right = -432.0
+offset_bottom = 443.0
+theme_override_fonts/font = ExtResource("3_o5hvj")
+theme_override_font_sizes/font_size = 21
+text = "Press Space to exit tutorial."

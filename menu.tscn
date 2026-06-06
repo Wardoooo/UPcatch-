@@ -99,6 +99,16 @@ theme_override_font_sizes/font_size = 67
 text = "TUTORIAL"
 script = ExtResource("7_ecwwl")
 
+[node name="Title" type="Label" parent="." unique_id=92375135]
+offset_left = -954.0
+offset_top = 998.0
+offset_right = 1691.0
+offset_bottom = 2256.0
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 30
+text = "Tip: click esc to pause while in game"
+horizontal_alignment = 1
+
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1220970470]
 occluder = SubResource("OccluderPolygon2D_4hy44")
 

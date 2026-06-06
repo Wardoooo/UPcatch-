@@ -2,6 +2,7 @@
 
 [ext_resource type="VideoStream" uid="uid://qknirj2pxbk7" path="res://Videos/GAMEPROJ_INTRO.ogv" id="1_enhxa"]
 [ext_resource type="Script" uid="uid://dhv34wuva4ve" path="res://INTRO.cpp" id="2_db5k1"]
+[ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="3_qs7xo"]
 
 [node name="Node2D" type="Node2D" unique_id=1944309297]
 position = Vector2(-1, 0)
@@ -17,3 +18,12 @@ autoplay = true
 script = ExtResource("2_db5k1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1427962308]
+
+[node name="Label" type="Label" parent="." unique_id=1436638425]
+offset_left = -908.0
+offset_top = 424.0
+offset_right = -45.0
+offset_bottom = 492.0
+theme_override_fonts/font = ExtResource("3_qs7xo")
+theme_override_font_sizes/font_size = 40
+text = "Press any key to skip."

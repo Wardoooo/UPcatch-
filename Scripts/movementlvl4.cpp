@@ -9,7 +9,7 @@ using namespace godot;
 using namespace jenova::sdk;
 namespace lvl4 {
 	CharacterBody2D* self = nullptr;
-	float speed = 2500.0f;
+	float speed = 1000.0f;
 	float dash_multiplier = 2.67f;
 	const float warp_left_edge  =  -978.0f;
 	const float warp_right_edge =  1002.0f;

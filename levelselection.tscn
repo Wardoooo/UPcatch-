@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ca3ksref3533h" path="res://Scripts/LevelSwitch/endlessbutton.cpp" id="1_q2imn"]
 [ext_resource type="Texture2D" uid="uid://c6csbtdr205kh" path="res://Assets/BG/orig_big1.png" id="1_qh4vu"]
 [ext_resource type="FontFile" uid="uid://rt3lxboearoq" path="res://Assets/Fonts/PeaberryDoublespace.ttf" id="2_3acge"]
+[ext_resource type="Script" uid="uid://c1m15huy27il6" path="res://Scripts/LevelSwitch/speciallevelbutton.cpp" id="8_jaw4n"]
 [ext_resource type="Script" uid="uid://dol3wn7mppl67" path="res://RETURN.cpp" id="8_outnm"]
 
 [node name="Node2D" type="Node2D" unique_id=166106774]
@@ -77,6 +78,17 @@ theme_override_fonts/font = ExtResource("2_3acge")
 theme_override_font_sizes/font_size = 67
 text = "Level 1"
 script = ExtResource("1_4v0y6")
+
+[node name="SPECIAL" type="Button" parent="Level Selection" unique_id=863796027]
+layout_mode = 0
+offset_left = -855.0
+offset_top = 350.0
+offset_right = 844.0
+offset_bottom = 479.0
+theme_override_fonts/font = ExtResource("2_3acge")
+theme_override_font_sizes/font_size = 67
+text = "SPECIAL"
+script = ExtResource("8_jaw4n")
 
 [node name="RETURN" type="Button" parent="Level Selection" unique_id=234875643]
 layout_mode = 0
